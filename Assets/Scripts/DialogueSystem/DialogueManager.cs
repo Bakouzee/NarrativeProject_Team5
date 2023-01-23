@@ -3,16 +3,46 @@ namespace TeamFive
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.UI;
+    using TMPro;
 
+    public delegate void OnPlayerChoiceDelegate();
     public class DialogueManager : MonoBehaviour
     {
-        [SerializeField] private DialogueDatabase _dialogueToRead;
-        [SerializeField] private List<GameObject> _choicesToDisplay;
-        [SerializeField] private List<GameObject> _dialogueToDisplay;
-
-        private void Start()
+        #region Singleton
+        public static DialogueManager Instance;
+        private void Awake()
         {
-            
+            if(Instance == null) Instance = this;
+
+            _currentLanguage = Language.FR;
+
+        }
+        #endregion
+
+        public enum Language
+        {
+            FR,
+            EN,
+        }
+
+        public OnPlayerChoiceDelegate OnPlayerChoice;
+
+        [SerializeField] private Language _currentLanguage;
+        [SerializeField] private DialogueSystem dialogueSystem;
+
+        #region Properties
+        public Language GetCurrentLanguage => _currentLanguage;
+        #endregion
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _currentLanguage = Language.EN;
+                dialogueSystem.ChangeLanguage(dialogueSystem.GetDialogueData);
+                dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetDialogueData.indexDialogue];
+            }
         }
     }
 }
