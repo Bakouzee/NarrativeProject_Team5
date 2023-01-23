@@ -53,15 +53,16 @@ namespace TeamFive
             while (!endOfFile) // Tant qu'il y a une ligne non vide
             {
 
-                if (data_String == null)
+
+                // Stocke les valeurs 
+                var data_values = data_String.Split(';');
+
+                if (data_values[0] == "")
                 {
                     endOfFile = true;
                     Debug.Log("end of file at index : " + indexTest);
                     break;
                 }
-
-                // Stocke les valeurs 
-                var data_values = data_String.Split(';');
 
                 data.speakersID.Add(data_values[0]);
                 data.speakersName.Add(data_values[1]);
