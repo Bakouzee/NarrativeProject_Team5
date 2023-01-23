@@ -7,13 +7,14 @@ namespace TeamFive
     public class DialogueData
     {
         public int indexDialogue;
-        public List<Sprite> speakersID;
-        public List<string> speakersName;
-        public List<string> dialogueFR;
-        public List<string> dialogueEN;
-        public List<string> sfx;
-        public List<string> vfx;
-        public bool playerChoice;
+        public List<string> speakersID = new();
+        public List<string> speakersName = new();
+        public List<string> dialogueFR = new();
+        public List<string> dialogueEN = new();
+        public List<string> sfx = new();
+        public List<string> vfx = new();
+        public string playerChoice;
+        public bool isPlayerChoice;
         public float timerChoice;
     }
 }

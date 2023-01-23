@@ -1,0 +1,6 @@
+ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec)
+PERSO_ANGRY;Antoine;Salut ?;Hi;SD_HitTable;ANIM_Shake;;
+PERSO_SAD;Mathieu;Bonjour;Hello;SD_;;;
+PERSO_HAPPY;JeanMy2001;Coucou;Hi;SD_HitTable;ANIM_Shake;;
+SOUND;;;;;ANIM_Day;;
+PERSO_SAD;Freddy;Hey et vous ?;Hey;SD_HitTable;ANIM_Shake;Choix 1;

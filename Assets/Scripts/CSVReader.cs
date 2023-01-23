@@ -1,57 +1,49 @@
 namespace TeamFive
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.IO;
+    using Unity.VisualScripting;
     using UnityEngine;
 
     public class CSVReader : MonoBehaviour
     {
-        string filePath = "Assets/Feuille_2.csv";
+        private string filePath;
         bool endOfFile = false;
 
+
+        [SerializeField] private DialogueDatabase dialogueDatabase;
+
+        [SerializeField] private int nbFile;
         [SerializeField] private int indexLine;
 
         private string data_String;
 
-        List<string> id = new List<string>();
-        List<string> character = new List<string>();
-        List<string> fr = new List<string>();
-        List<string> en = new List<string>();
-        List<string> ja = new List<string>();
-        List<string> audio = new List<string>();
-        List<string> anim = new List<string>();
-        string choix = "";
-        string timer = "";
-
         private void Start()
         {
-            SetFilePath("Feuille_2");
-            Debug.Log(filePath);
-            ReadSheet();
-            for (int i = 0; i < id.Count; i++)
-            {
-                Debug.Log("id numéro : " + i + " = " + id[i]);
-                Debug.Log(character[i]);
-                Debug.Log(fr[i]);
-                Debug.Log(en[i]);
-                Debug.Log(ja[i]);
-                Debug.Log(audio[i]);
-            }
-            Debug.Log(choix);
-            Debug.Log(timer);
-
+            dialogueDatabase.dialogueDatas.Clear();
+            ReadAllSheets(nbFile);
         }
 
-        public void SetFilePath(string feuille)
+        public void ReadAllSheets(int nbFile)
         {
-            filePath = "Assets/" + feuille + ".csv";
+
+            for (int i = 1; i <= nbFile; i++)
+            {
+                DialogueData data = new DialogueData();
+                filePath = "Assets/Ressources/Sheet_Dialogue/Feuille_" + i + ".csv";
+                ReadSheet(data);
+                Debug.Log("suuuuuh");
+            }
         }
 
-        private void ReadSheet()
+        private void ReadSheet(DialogueData data)
         {
             StreamReader strReader = new StreamReader(filePath);
-            int index = 0;
+            Debug.Log("file path : " + filePath);
+
+            int indexTest = 0;
 
             for (int i = 0; i <= indexLine; i++)
             {
@@ -64,38 +56,42 @@ namespace TeamFive
                 if (data_String == null)
                 {
                     endOfFile = true;
+                    Debug.Log("end of file at index : " + indexTest);
                     break;
                 }
 
                 // Stocke les valeurs 
                 var data_values = data_String.Split(';');
-                List<string> actualSentence = new List<string>();
 
-                id.Add(data_values[0]);
-                character.Add(data_values[1]);
-                fr.Add(data_values[2]);
-                en.Add(data_values[3]);
-                ja.Add(data_values[4]);
-                audio.Add(data_values[5]);
-                anim.Add(data_values[6]);
+                data.speakersID.Add(data_values[0]);
+                data.speakersName.Add(data_values[1]);
+                data.dialogueFR.Add(data_values[2]);
+                data.dialogueEN.Add(data_values[3]);
+                data.sfx.Add(data_values[4]);
+                data.vfx.Add(data_values[5]);
 
+                if (data_values[6] != "")
+                {
+                    data.playerChoice = data_values[6];
+                }
                 if (data_values[7] != "")
                 {
-                    choix = data_values[7];
-                    Debug.Log("choix pendant tri = " + choix);
-                }
-                if (data_values[8] != "")
-                {
-                    timer = data_values[8];
-                    Debug.Log("timer pendant tri = " + timer);
+                    data.timerChoice = (float) Convert.ToDouble(data_values[7]);
                 }
 
                 data_String = strReader.ReadLine();
+                indexTest++;
 
-                //List<List<string>> stringData = new List<List<string>>();
             }
+            Debug.Log("Data set");
+            dialogueDatabase.dialogueDatas.Add(data);
+            endOfFile = false;
         }
 
+        public void InitSheets()
+        {
+
+        }
     }
 }
 
