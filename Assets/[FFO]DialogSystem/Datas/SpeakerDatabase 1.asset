@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerDatas:
   - id: BAD_RAP_01
-    label: Raph
+    label: Medhiv
     statuses:
     - emotion: 0
       icon: {fileID: 21300000, guid: 10f72847d7af62443afce9a74bb3b9ee, type: 3}
