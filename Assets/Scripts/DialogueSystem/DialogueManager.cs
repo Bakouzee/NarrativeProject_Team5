@@ -7,7 +7,8 @@ namespace TeamFive
     public class DialogueManager : MonoBehaviour
     {
         [SerializeField] private DialogueDatabase _dialogueToRead;
-        [SerializeField] private List<GameObject> _btnChoices;
+        [SerializeField] private List<GameObject> _choicesToDisplay;
+        [SerializeField] private List<GameObject> _dialogueToDisplay;
 
         private void Start()
         {
