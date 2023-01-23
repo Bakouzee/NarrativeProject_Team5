@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2420e31161bb5499ba006e03639892, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
-  dialogueDatas: []
+  dialogueDatas:
+  - name: neneneenenenenenene
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
