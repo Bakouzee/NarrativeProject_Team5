@@ -10,6 +10,8 @@ namespace TeamFive
     {
         public Sound[] sounds;
 
+        SoundData SoundData;
+
         public static AudioManager instance;
 
         bool resetSound = false;
@@ -42,7 +44,7 @@ namespace TeamFive
                 s.source.outputAudioMixerGroup = s.audioMixer;
             }
         }
-
+        
 
         public void Play(string name)
         {
