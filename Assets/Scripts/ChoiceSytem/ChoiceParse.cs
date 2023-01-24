@@ -62,7 +62,7 @@ namespace TeamFive
                     choice.textEN.Add(second_split[1]);
                 }
 
-                for (int i = 9; i <= 13; i++)
+                for (int i = 9; i <= 12; i++)
                 {
                     choice.sheetNumber.Add(data_values[i]);
                 }
