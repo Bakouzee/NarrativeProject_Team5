@@ -9,8 +9,6 @@ namespace TeamFive
     {
         public List<string> buttonFR = new List<string>();
         public List<string> buttonEN = new List<string>();
-        public List<string> textFR = new List<string>();
-        public List<string> textEN = new List<string>();
         public List<string> sheetNumber = new List<string>();
     }
 

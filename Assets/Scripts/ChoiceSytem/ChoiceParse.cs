@@ -46,20 +46,15 @@ namespace TeamFive
 
                 // Stocke les valeurs 
                 var data_values = data_String.Split(';');
-                Debug.Log(data_values.ToString());
 
                 for(int i = 1; i <= 4; i++)
                 {
-                    var second_split = data_values[i].Split('|');
-                    choice.buttonFR.Add(second_split[0]);
-                    choice.textFR.Add(second_split[1]);
+                    choice.buttonFR.Add(data_values[i]);
                 }
 
                 for (int i = 5; i <= 8; i++)
                 {
-                    var second_split = data_values[i].Split('|');
-                    choice.buttonEN.Add(second_split[0]);
-                    choice.textEN.Add(second_split[1]);
+                    choice.buttonEN.Add(data_values[i]);
                 }
 
                 for (int i = 9; i <= 12; i++)
