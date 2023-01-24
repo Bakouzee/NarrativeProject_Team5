@@ -40,8 +40,8 @@ namespace TeamFive
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 _currentLanguage = Language.EN;
-                dialogueSystem.ChangeLanguage(dialogueSystem.GetDialogueData);
-                dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetDialogueData.indexDialogue];
+                dialogueSystem.ChangeLanguage(dialogueSystem.GetSetDialogueData);
+                dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetSetDialogueData.indexDialogue];
             }
         }
     }

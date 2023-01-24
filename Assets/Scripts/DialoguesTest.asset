@@ -14,30 +14,122 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueDatas:
   - indexDialogue: 0
-    speakersID: []
+    speakersID:
+    - ANT_ANGRY
+    - PERSO_SAD
+    - PERSO_HAPPY
+    - SOUND
+    - PERSO_SAD
     speakersName:
-    - Freddy
     - Antoine
+    - Mathieu
+    - JeanMy2001
+    - 
+    - Freddy
     dialogueFR:
+    - "Salut, comment \xE7a va "
+    - Bonjour
     - Coucou
-    - "\xE7a va ?"
+    - 
+    - Hey et vous ?
     dialogueEN:
+    - Hi
     - Hello
-    - How are you ?
-    sfx: []
-    vfx: []
-    playerChoice: 
+    - Hi
+    - 
+    - Hey
+    sfx:
+    - SD_HitTable
+    - SD_
+    - SD_HitTable
+    - 
+    - SD_HitTable
+    vfx:
+    - ANIM_Shake
+    - 
+    - ANIM_Shake
+    - ANIM_Day
+    - ANIM_Shake
+    playerChoice: Choix 1
     isPlayerChoice: 0
     timerChoice: 0
   - indexDialogue: 0
-    speakersID: []
-    speakersName: []
+    speakersID:
+    - PERSO_ANGRY
+    - PERSO_SAD
+    - PERSO_HAPPY
+    - SOUND
+    - PERSO_SAD
+    speakersName:
+    - Antoine
+    - Mathieu
+    - JeanMy2001
+    - 
+    - Freddy
     dialogueFR:
+    - "Salut, comment \xE7a va "
+    - Bonjour
     - Coucou
+    - 
+    - Hey et vous ?
     dialogueEN:
+    - Hi
     - Hello
-    sfx: []
-    vfx: []
-    playerChoice: 
+    - Hi
+    - 
+    - Hey
+    sfx:
+    - SD_HitTable
+    - SD_
+    - SD_HitTable
+    - 
+    - SD_HitTable
+    vfx:
+    - ANIM_Shake
+    - 
+    - ANIM_Shake
+    - ANIM_Day
+    - ANIM_Shake
+    playerChoice: Choix 1
+    isPlayerChoice: 0
+    timerChoice: 0
+  - indexDialogue: 0
+    speakersID:
+    - PERSO_ANGRY
+    - PERSO_SAD
+    - PERSO_HAPPY
+    - SOUND
+    - PERSO_SAD
+    speakersName:
+    - Antoine
+    - Mathieu
+    - JeanMy2001
+    - 
+    - Freddy
+    dialogueFR:
+    - "Salut, comment \xE7a va "
+    - Bonjour
+    - Coucou
+    - 
+    - Hey et vous ?
+    dialogueEN:
+    - Hi
+    - Hello
+    - Hi
+    - 
+    - Hey
+    sfx:
+    - SD_HitTable
+    - SD_
+    - SD_HitTable
+    - 
+    - SD_HitTable
+    vfx:
+    - ANIM_Shake
+    - 
+    - ANIM_Shake
+    - ANIM_Day
+    - ANIM_Shake
+    playerChoice: Choix 1
     isPlayerChoice: 0
     timerChoice: 0

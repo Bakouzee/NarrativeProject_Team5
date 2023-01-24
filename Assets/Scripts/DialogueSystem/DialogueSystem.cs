@@ -25,7 +25,7 @@ namespace TeamFive
         private Coroutine _readCoroutine;
 
         #region Properties
-        public DialogueData GetDialogueData => _dataToRead;
+        public DialogueData GetSetDialogueData { get { return _dataToRead; } set { _dataToRead = value; } }
         public TextMeshProUGUI GetDialogueTxt => _dialogueTxt;
         public List<string> GetDialoguesToRead => _dialoguesToRead;
         public string GetChoices => _choices;
