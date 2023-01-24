@@ -34,16 +34,13 @@ namespace TeamFive
                 DialogueData data = new DialogueData();
                 filePath = "Assets/Ressources/Sheet_Dialogue/Feuille_" + i + ".csv";
                 ReadSheet(data);
-                Debug.Log("suuuuuh");
             }
         }
 
+        #region ReadSheet
         private void ReadSheet(DialogueData data)
         {
             StreamReader strReader = new StreamReader(filePath);
-            Debug.Log("file path : " + filePath);
-
-            int indexTest = 0;
 
             for (int i = 0; i <= indexLine; i++)
             {
@@ -52,15 +49,12 @@ namespace TeamFive
 
             while (!endOfFile) // Tant qu'il y a une ligne non vide
             {
-
-
                 // Stocke les valeurs 
                 var data_values = data_String.Split(';');
 
                 if (data_values[0] == "")
                 {
                     endOfFile = true;
-                    Debug.Log("end of file at index : " + indexTest);
                     break;
                 }
 
@@ -81,18 +75,13 @@ namespace TeamFive
                 }
 
                 data_String = strReader.ReadLine();
-                indexTest++;
 
             }
             Debug.Log("Data set");
             dialogueDatabase.dialogueDatas.Add(data);
             endOfFile = false;
         }
-
-        public void InitSheets()
-        {
-
-        }
+        #endregion
     }
 }
 
