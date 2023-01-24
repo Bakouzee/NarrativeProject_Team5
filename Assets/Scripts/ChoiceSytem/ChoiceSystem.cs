@@ -18,13 +18,13 @@ public class ChoiceSystem : MonoBehaviour
     }
 
     //public void NextSheet(int indexSheet, bool isFollowingSheet)
-    private void NextSheet(int indexSheet)
-    {
-        _indexSheet = indexSheet - 1;
-        if (_indexSheet < _databaseToRead.dialogueDatas.Count)
-        {
-            _dataToRead = _databaseToRead.dialogueDatas[_indexSheet];
-        }
-        ReadSentence(_dataToRead);
-    }
+    //private void NextSheet(int indexSheet)
+    //{
+    //    _indexSheet = indexSheet - 1;
+    //    if (_indexSheet < _databaseToRead.dialogueDatas.Count)
+    //    {
+    //        _dataToRead = _databaseToRead.dialogueDatas[_indexSheet];
+    //    }
+    //    ReadSentence(_dataToRead);
+    //}
 }

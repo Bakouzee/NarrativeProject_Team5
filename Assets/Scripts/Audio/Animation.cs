@@ -3,7 +3,7 @@ namespace TeamFive
     using System;
     using UnityEngine;
     using DG.Tweening;
-    using Microsoft.Unity.VisualStudio.Editor;
+    using UnityEngine.UI;
 
     public class Animation : MonoBehaviour
     {
@@ -41,11 +41,12 @@ namespace TeamFive
 
         void FadeIN()
         {
-            
+            imageLeft.DOFade(1f, 5f);
         }
 
         void FadeOut()
         {
+            imageLeft.DOFade(0f, 5f);
 
         }
     }
