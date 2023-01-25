@@ -180,10 +180,11 @@ namespace TeamFive
                         // Display img
                         for(int i = 0; i < _charactersImg.Count; i++)
                         {
-                            if (_charactersImg[i].enabled)
+                            if (!_charactersImg[i].enabled)
                             {
+                                Animation.instance.FadeIN(_charactersImg[i]);
+                                _charactersImg[i].gameObject.tag = character;
                                 _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "MED_CALM");
-                                _charactersImg[i].gameObject.SetActive(true);
                                 return;
                             }
                         }
@@ -200,9 +201,8 @@ namespace TeamFive
             {
                 for (int i = 0; i < _charactersImg.Count; i++)
                 {
-                    if (_charactersImg[i].enabled)
+                    if (_charactersImg[i].enabled && _charactersImg[i].gameObject.tag == character)
                     {
-                        // fade out img
                         Animation.instance.FadeOut(_charactersImg[i]);
                     }
                 }
