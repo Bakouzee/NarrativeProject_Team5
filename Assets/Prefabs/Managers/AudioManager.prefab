@@ -44,5 +44,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6939d84b9518814494029f7ff1c9057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: SD_AmbiantSound
+    clip: {fileID: 8300000, guid: 3b0c5d42649729a44a5d97e3a867f0a4, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SD_Musique01
+    clip: {fileID: 8300000, guid: 5393ea519b57baf4cad323a18a2f519f, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SD_Musique02
+    clip: {fileID: 8300000, guid: 8f78cba81d3360c438d98feebf44d91a, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SD_Musique03
+    clip: {fileID: 8300000, guid: d2dd56528572b2840bd1a5e6017d8ca4, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SD_Musique04
+    clip: {fileID: 8300000, guid: 2ccd14a80f09efe46b5d4432861206ff, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SD_Text
+    clip: {fileID: 8300000, guid: 899644a057f824244b1877cafac26906, type: 3}
+    volume: 0.499
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
   currentSound: 
