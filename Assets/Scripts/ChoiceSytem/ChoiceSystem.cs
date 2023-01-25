@@ -24,21 +24,14 @@ namespace TeamFive
             switch (indexButton)
             {
                 case 1:
-                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[0]) - 1;
+                    _indexSheet = int.Parse(_dataToRead.sheetNumber[0]);
+                    _indexSheet--;
                     Debug.Log("index sheet : " + _indexSheet);
                     dialogueSystem.NextSheet(_indexSheet);
                     break;
                 case 2:
-                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[1]) - 1;
-                    dialogueSystem.NextSheet(_indexSheet);
-                    break;
-                case 3:
-
-                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[2]) - 1;
-                    dialogueSystem.NextSheet(_indexSheet);
-                    break;
-                case 4:
-                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[3]) - 1;
+                    _indexSheet = int.Parse(_dataToRead.sheetNumber[1]);
+                    _indexSheet--;
                     dialogueSystem.NextSheet(_indexSheet);
                     break;
             }

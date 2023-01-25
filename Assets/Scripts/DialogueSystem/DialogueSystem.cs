@@ -77,9 +77,11 @@ namespace TeamFive
         }
 
         public void NextSheet(int indexSheet)
-        {          
+        {
+            Debug.Log("index sheet : " + indexSheet);
             _dataToRead = _databaseToRead.dialogueDatas[indexSheet];
-            _dataToRead.indexDialogue = - 1;
+            _dataToRead.indexDialogue = -1;
+            _dialoguesToRead = _dataToRead.dialogueFR;
             ShowDialogue(true);
 
             NextSentence();
@@ -96,9 +98,9 @@ namespace TeamFive
             string[] idSplit = id.Split('_');
 
             // Character comes in scene
-            if(idSplit.Length > 0)
+            if(idSplit.Length > 1)
             {
-                if(idSplit[1] == "COMEIN")
+                if (idSplit[1] == "COMEIN")
                 {
                     CharactersInScene(true, speakerName);
                 } 
@@ -134,6 +136,7 @@ namespace TeamFive
                 else
                 {
                     // change sprite character
+                    Debug.Log("index : " + index);
                     _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[index], _dialogueSpeed));
                 }
                 AudioManager.instance.Play(dialogueData.sfx[index]);

@@ -11,7 +11,7 @@ namespace TeamFive
         [SerializeField] private ChoiceDatabase choiceDatabase;
         ScriptableChoice choice;
 
-        string filePath = "Assets/Ressources/Sheet_Dialogue/Choix.csv";
+        string filePath = "Assets/Ressources/Sheet_DialogueTest/Choix.csv";//Sheet_Dialogue
         bool endOfFile = false;
 
         [SerializeField] private int indexLine;
@@ -37,7 +37,6 @@ namespace TeamFive
             while (!endOfFile) // Tant qu'il y a une ligne non vide
             {
                 choice = new ScriptableChoice();
-
                 if (data_String == null)
                 {
                     endOfFile = true;
@@ -47,23 +46,24 @@ namespace TeamFive
                 // Stocke les valeurs 
                 var data_values = data_String.Split(';');
 
-                for(int i = 1; i <= 4; i++)
+                for(int i = 1; i <= 2; i++)
                 {
                     choice.buttonFR.Add(data_values[i]);
                 }
 
-                for (int i = 5; i <= 8; i++)
+                for (int i = 6; i <= 7; i++)
                 {
                     choice.buttonEN.Add(data_values[i]);
                 }
 
-                for (int i = 9; i <= 12; i++)
+                for (int i = 10; i <= 11; i++)
                 {
                     choice.sheetNumber.Add(data_values[i]);
                 }
 
                 data_String = strReader.ReadLine();
 
+                Debug.Log("Choice added");
                 choiceDatabase.choices.Add(choice);
             }
 
