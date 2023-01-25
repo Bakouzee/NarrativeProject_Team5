@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueDatabase: {fileID: 11400000, guid: c96da6c94ca470147ab49bb387eb0e05, type: 2}
-  nbFile: 3
+  nbFile: 40
   indexLine: 1
 --- !u!114 &1772611681808959430
 MonoBehaviour:

@@ -10,6 +10,7 @@ namespace TeamFive
     public class DialogueSystem : MonoBehaviour
     {
         [SerializeField] private DialogueDatabase _databaseToRead;
+        [SerializeField] private ChoiceDatabase _choiceDatabase;
         [SerializeField] private List<GameObject> _choicesToDisplay;
         [SerializeField] private List<GameObject> _dialogueToDisplay;
         [SerializeField] private TextMeshProUGUI _dialogueTxt;
@@ -179,7 +180,7 @@ namespace TeamFive
                         // Display img
                         for(int i = 0; i < _charactersImg.Count; i++)
                         {
-                            if (!_charactersImg[i].enabled)
+                            if (!_charactersImg[i].gameObject.activeSelf)
                             {
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
@@ -192,7 +193,7 @@ namespace TeamFive
                     case "Diya":
                         for (int i = 0; i < _charactersImg.Count; i++)
                         {
-                            if (!_charactersImg[i].enabled)
+                            if (!_charactersImg[i].gameObject.activeSelf)
                             {
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
@@ -205,7 +206,7 @@ namespace TeamFive
                     case "Syrdon":
                         for (int i = 0; i < _charactersImg.Count; i++)
                         {
-                            if (!_charactersImg[i].enabled)
+                            if (!_charactersImg[i].gameObject.activeSelf)
                             {
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
@@ -276,6 +277,12 @@ namespace TeamFive
 
                 _choicesToDisplay[0].transform.parent.gameObject.SetActive(true);
                 _choices = _dataToRead.playerChoice;
+
+                for(int i = 0; i < _choicesToDisplay.Count; i++)
+                {
+                    TextMeshProUGUI choiceTxt = _choicesToDisplay[i].GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>();
+                    choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonFR[i];
+                }
             }
         }
     }

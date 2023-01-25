@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _databaseToRead: {fileID: 11400000, guid: c96da6c94ca470147ab49bb387eb0e05, type: 2}
+  _choiceDatabase: {fileID: 11400000, guid: 1f114882f3272ce43b05fe7f6615fab6, type: 2}
   _choicesToDisplay:
   - {fileID: 0}
   - {fileID: 0}
