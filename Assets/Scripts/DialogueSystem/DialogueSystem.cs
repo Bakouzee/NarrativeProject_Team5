@@ -104,7 +104,7 @@ namespace TeamFive
                     {
                         Animation.instance.FadeIN(_charactersImg[i]);
                         _charactersImg[i].gameObject.tag = speakerName;
-                        Animation.instance.FadeOut();
+                        //Animation.instance.FadeOut();
                         break;
                     }
                 }
