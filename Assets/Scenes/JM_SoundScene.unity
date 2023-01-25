@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IMG_3
       objectReference: {fileID: 0}
+    - target: {fileID: 308596871, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 308596872, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -708,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815504291973739036, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1815504291973739038, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_Color.a
@@ -733,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 1815504292279093010, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_Name
       value: IMG_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815504292279093010, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1815504292279093100, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_Color.a
@@ -869,3 +877,7 @@ MonoBehaviour:
   imageLeft: {fileID: 1479500715}
   imageMiddle: {fileID: 1482691185}
   imageRight: {fileID: 1738101261}
+  duration: 5
+  intensity: 2
+  strenght: 3
+  fadeDuration: 5

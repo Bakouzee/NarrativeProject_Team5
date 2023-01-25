@@ -4,49 +4,67 @@ namespace TeamFive
     using UnityEngine;
     using DG.Tweening;
     using UnityEngine.UI;
+    using System.Collections;
+    using System.Collections.Generic;
+    using TMPro;
 
     public class Animation : MonoBehaviour
     {
+        public static Animation instance;
 
+
+        [Header("------Shaking scene------")]
         public GameObject backGround;
-        public GameObject perso;
+        public GameObject perso;        
 
-        public Image imageLeft;
-        public Image imageMiddle;
-        public Image imageRight;
-        private void Update()
+        [Header("------CameraShake values------")]
+        public float duration;
+        public float intensity;
+        public int strength;
+
+
+        [Header("------FadeOut Fade in Time duration------")]
+        public float fadeDuration;
+
+        [Header("------Sprite Medhiv------")]
+        [SerializeField] private List<Sprite> medhivSprite;
+        [Header("------Sprite Diya------")]
+        [SerializeField] private List<Sprite> diyaSprite;
+        [Header("------Sprite Syrdon------")]
+        [SerializeField] private List<Sprite> syrdonSprite;
+
+
+        private void Awake()
         {
-            if(Input.GetKeyDown(KeyCode.P))
+            if (instance == null)
             {
-                CameraShake();
+                instance = this;
             }
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                FadeIN();
-            }
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                FadeOut();
-            }
-            
         }
+        
 
-        void CameraShake()
+        public void CameraShake()
         {
-            backGround.transform.DOShakePosition(5f, 8f, 10, 2f, true);
-            perso.transform.DOShakePosition(3f, 8f, 10, 2f, true);
+            
+            backGround.transform.DOShakePosition(duration, intensity, strength, 2f, true);
+            perso.transform.DOShakePosition(duration, intensity, strength, 2f, true);
         }
 
         
 
-        void FadeIN()
+        public void FadeIN(Image imageToFadeIn)
         {
-            imageLeft.DOFade(1f, 5f);
+            imageToFadeIn.gameObject.SetActive(true);
+            imageToFadeIn.DOFade(1f, fadeDuration);
         }
 
-        void FadeOut()
+        
+
+        public IEnumerator FadeOut(Image imageToFadeOut)
         {
-            imageLeft.DOFade(0f, 5f);
+            imageToFadeOut.DOFade(0f, fadeDuration);
+            yield return new WaitForSeconds(fadeDuration);
+            imageToFadeOut.gameObject.SetActive(false);
 
         }
     }
