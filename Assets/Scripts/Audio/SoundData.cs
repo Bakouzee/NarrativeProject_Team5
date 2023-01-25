@@ -7,6 +7,6 @@ namespace TeamFive
     [CreateAssetMenu(fileName = "Database", menuName = "Database/Sound Database")]
     public class SoundData : ScriptableObject
     {
-        public List<Sound> dialogueDatas = new();
+        public List<Sound> SoundDatabase = new();
     }
 }
