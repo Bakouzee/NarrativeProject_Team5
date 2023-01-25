@@ -449,28 +449,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1815504290793080087, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
   m_PrefabInstance: {fileID: 1532772114}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1479500715 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1815504292279093100, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
-  m_PrefabInstance: {fileID: 1532772114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1482691185 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1815504291973739038, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
-  m_PrefabInstance: {fileID: 1532772114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1532772114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,6 +721,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1815504292279093100, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815504292279093100, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
@@ -796,17 +778,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
---- !u!114 &1738101261 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 308596873, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
-  m_PrefabInstance: {fileID: 1532772114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1834593106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1815504291785918819, guid: 7cc1942cb6164f04198a279d10b86c59, type: 3}
@@ -874,10 +845,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 806280689}
   perso: {fileID: 1834593106}
-  imageLeft: {fileID: 1479500715}
-  imageMiddle: {fileID: 1482691185}
-  imageRight: {fileID: 1738101261}
   duration: 5
-  intensity: 2
-  strenght: 3
+  intensity: 10
+  strength: 8
   fadeDuration: 5
+  medhivSprite:
+  - {fileID: 21300000, guid: 019341996fa515040a98b9b7a1f42670, type: 3}
+  - {fileID: 21300000, guid: c54348ba0b77cdb4ba174938d9a52d8c, type: 3}
+  - {fileID: 21300000, guid: f1418b8f70ad10c44a6585d51472b00e, type: 3}
+  - {fileID: 21300000, guid: 8b639590aca7da846bd4977cbd28d939, type: 3}
+  - {fileID: 21300000, guid: 4807c864750099a4093730ac879c7534, type: 3}
+  - {fileID: 21300000, guid: b00561c660eae2d4388959ca03b786a5, type: 3}
+  - {fileID: 21300000, guid: ef92bcff843bbbf4ebe888b4ca0c273d, type: 3}
+  diyaSprite: []
+  syrdonSprite: []
