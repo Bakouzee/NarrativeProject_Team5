@@ -50,41 +50,41 @@ MonoBehaviour:
     volume: 0.499
     pitch: 1
     loop: 1
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: 63738610456628950, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   - name: SD_Musique01
     clip: {fileID: 8300000, guid: 5393ea519b57baf4cad323a18a2f519f, type: 3}
     volume: 0.499
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: -9056470658755765878, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   - name: SD_Musique02
     clip: {fileID: 8300000, guid: 8f78cba81d3360c438d98feebf44d91a, type: 3}
     volume: 0.499
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: -9056470658755765878, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   - name: SD_Musique03
     clip: {fileID: 8300000, guid: d2dd56528572b2840bd1a5e6017d8ca4, type: 3}
     volume: 0.499
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: -9056470658755765878, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   - name: SD_Musique04
     clip: {fileID: 8300000, guid: 2ccd14a80f09efe46b5d4432861206ff, type: 3}
     volume: 0.499
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: -9056470658755765878, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   - name: SD_Text
     clip: {fileID: 8300000, guid: 899644a057f824244b1877cafac26906, type: 3}
     volume: 0.499
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: 63738610456628950, guid: 70a80a16bf822174ea7f53d583b6915a, type: 2}
     source: {fileID: 0}
   currentSound: 

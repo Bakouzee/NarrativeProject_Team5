@@ -76,6 +76,15 @@ namespace TeamFive
             ReadSentence(_dataToRead);
         }
 
+        public void NextSheet(int indexSheet)
+        {          
+            _dataToRead = _databaseToRead.dialogueDatas[indexSheet];
+            _dataToRead.indexDialogue = - 1;
+            ShowDialogue(true);
+
+            NextSentence();
+        }
+
         private void ReadSentence(DialogueData dialogueData)
         {
             int index = dialogueData.indexDialogue;
@@ -232,4 +241,6 @@ namespace TeamFive
             }
         }
     }
+
+    
 }

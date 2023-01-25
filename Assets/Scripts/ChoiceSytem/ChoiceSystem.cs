@@ -1,30 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
-using TeamFive;
-using UnityEngine;
-
-public class ChoiceSystem : MonoBehaviour
+namespace TeamFive
 {
-    [SerializeField] private ChoiceDatabase _choiceDatabase;
-    private int _indexSheet;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using TeamFive;
+    using UnityEngine;
 
-    public void ButtonChoice(int indexButton)
+    public class ChoiceSystem : MonoBehaviour
     {
-        /*switch (indexButton) 
+        [SerializeField] private ChoiceDatabase _choiceDatabase;
+        [SerializeField] private DialogueSystem dialogueSystem;
+
+        private ScriptableChoice _dataToRead;
+
+        private int _indexSheet;
+
+        public void ButtonChoice(int indexButton)
         {
-            case 1:
-                NextSheet();
-        }*/
+            int choiceNumber = Convert.ToInt32(dialogueSystem.GetChoices);
+            Debug.Log("Choice number : " + choiceNumber);
+            _dataToRead = _choiceDatabase.choices[choiceNumber - 1];
+
+            switch (indexButton)
+            {
+                case 1:
+                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[0]) - 1;
+                    Debug.Log("index sheet : " + _indexSheet);
+                    dialogueSystem.NextSheet(_indexSheet);
+                    break;
+                case 2:
+                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[1]) - 1;
+                    dialogueSystem.NextSheet(_indexSheet);
+                    break;
+                case 3:
+
+                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[2]) - 1;
+                    dialogueSystem.NextSheet(_indexSheet);
+                    break;
+                case 4:
+                    _indexSheet = Convert.ToInt32(_dataToRead.sheetNumber[3]) - 1;
+                    dialogueSystem.NextSheet(_indexSheet);
+                    break;
+            }
+
+        }
+
+        //public void NextSheet(int indexSheet, bool isFollowingSheet)
+
     }
 
-    //public void NextSheet(int indexSheet, bool isFollowingSheet)
-    //private void NextSheet(int indexSheet)
-    //{
-    //    _indexSheet = indexSheet - 1;
-    //    if (_indexSheet < _databaseToRead.dialogueDatas.Count)
-    //    {
-    //        _dataToRead = _databaseToRead.dialogueDatas[_indexSheet];
-    //    }
-    //    ReadSentence(_dataToRead);
-    //}
 }

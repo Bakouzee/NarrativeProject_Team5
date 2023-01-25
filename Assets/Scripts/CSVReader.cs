@@ -20,7 +20,7 @@ namespace TeamFive
 
         private string data_String;
 
-        private void Start()
+        private void Awake()
         {
             dialogueDatabase.dialogueDatas.Clear();
             ReadAllSheets(nbFile);
@@ -50,6 +50,13 @@ namespace TeamFive
             while (!endOfFile) // Tant qu'il y a une ligne non vide
             {
                 // Stocke les valeurs 
+                if(data_String == null)
+                {
+                    endOfFile = true;
+                    Debug.Log("end of file");
+                    break;
+                }
+
                 var data_values = data_String.Split(';');
 
                 if (data_values[0] == "")
