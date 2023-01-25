@@ -1,10 +1,10 @@
-ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Le comportement de l'ogre à déteint sur vous on dirai. Tenez, c'est offert par la maison.;;;;;;;;;;;;;;;;;;;
+ï»¿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
+PLAYER;Player;Le comportement de l'ogre Ã  dÃ©teint sur vous on dirai. Tenez, c'est offert par la maison.;;;;;;;;;;;;;;;;;;;
 DIY_ANGRY;Diya;Vous avez la langue bien pendu pour un tavernier.;;;;;;;;;;;;;;;;;;;
-DIY_CALM;Diya;Dépêchez vous de me donner ce verre...;;;;;;;;;;;;;;;;;;;
+DIY_CALM;Diya;DÃ©pÃªchez vous de me donner ce verre...;;;;;;;;;;;;;;;;;;;
 MED_COMEIN;Medhiv;Et bien Diya ? Tu bois sans nous ?;;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Tu n'apprendras donc jamais les bonnes manières ...;;;;;;;;;;;;;;;;;;;
-DIY_DRUNK;Syrdon;Boucle là Medhiv, on mérite tous de boire un bon coup après ce combat;;;;;;;;;;;;;;;;;;;
+MED_CALM;Medhiv;Tu n'apprendras donc jamais les bonnes maniÃ¨res ...;;;;;;;;;;;;;;;;;;;
+DIY_DRUNK;Syrdon;Boucle lÃ  Medhiv, on mÃ©rite tous de boire un bon coup aprÃ¨s ce combat;;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;Tavernier, un autre verre !;;;;7;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

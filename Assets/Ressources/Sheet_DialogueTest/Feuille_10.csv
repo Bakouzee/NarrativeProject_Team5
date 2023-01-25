@@ -1,11 +1,11 @@
-ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Pardonnez moi très cher, je ne voulais pas vous vexer...;;;;;;;;;;;;;;;;;;;
+ï»¿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
+PLAYER;Player;Pardonnez moi trÃ¨s cher, je ne voulais pas vous vexer...;;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Tenez, celui la est offert par la maison;;;;;;;;;;;;;;;;;;;
-DIY_HAPPY;Diya;Vous savez vous faire pardonner en tout cas. Santé !;;;;;;;;;;;;;;;;;;;
+DIY_HAPPY;Diya;Vous savez vous faire pardonner en tout cas. SantÃ© !;;;;;;;;;;;;;;;;;;;
 SYR_COMEIN;Syrdon;;;;;;;;;;;;;;;;;;;;
 MED_COMEIN;Medhiv;Et bien Diya ? Tu bois sans nous ?;;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Tu n'apprendras donc jamais les bonnes manières ...;;;;;;;;;;;;;;;;;;;
-DIY_DRUNK;Syrdon;Boucle là Medhiv, on mérite tous de boire un bon coup après ce combat;;;;;;;;;;;;;;;;;;;
+MED_CALM;Medhiv;Tu n'apprendras donc jamais les bonnes maniÃ¨res ...;;;;;;;;;;;;;;;;;;;
+DIY_DRUNK;Syrdon;Boucle lÃ  Medhiv, on mÃ©rite tous de boire un bon coup aprÃ¨s ce combat;;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;Tavernier, un autre verre !;;;;7;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

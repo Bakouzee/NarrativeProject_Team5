@@ -1,8 +1,8 @@
-ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Comment s'est déroulé votre combat ?;;;;;;;;;;;;;;;;;;;
-DIY_FRUSTRATED;Diya;On n'était pas assez préparé...;;;;;;;;;;;;;;;;;;;
-DIY_FRUSTRATED;Diya;Ce maudit monstre était très résistant à la magie.;;;;;;;;;;;;;;;;;;;
-DIY_ANGRY;Diya;On s'est fait malmener durant le début du combat;;;;;;;;;;;;;;;;;;;
+ï»¿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
+PLAYER;Player;Comment s'est dÃ©roulÃ© votre combat ?;;;;;;;;;;;;;;;;;;;
+DIY_FRUSTRATED;Diya;On n'Ã©tait pas assez prÃ©parÃ©...;;;;;;;;;;;;;;;;;;;
+DIY_FRUSTRATED;Diya;Ce maudit monstre Ã©tait trÃ¨s rÃ©sistant Ã  la magie.;;;;;;;;;;;;;;;;;;;
+DIY_ANGRY;Diya;On s'est fait malmener durant le dÃ©but du combat;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

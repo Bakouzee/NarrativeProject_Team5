@@ -59,12 +59,13 @@ namespace TeamFive
             {
                 _dialogueTxt.text = "";
                 _dialogueTxt.text = _dialoguesToRead[_dataToRead.indexDialogue];
-                _dataToRead.indexDialogue++;
+                //_dataToRead.indexDialogue++;
                 StopCoroutine(_readCoroutine);
                 _readCoroutine = null;
                 return;
             }
 
+            _dataToRead.indexDialogue++;
             if (_dataToRead.indexDialogue >= _dialoguesToRead.Count)
             {
                 // Show Choices
@@ -72,13 +73,12 @@ namespace TeamFive
                 return;
             }
 
-            _dataToRead.indexDialogue++;
             ReadSentence(_dataToRead);
         }
 
         public void NextSheet(int indexSheet)
         {
-            Debug.Log("index sheet : " + indexSheet);
+            //Debug.Log("index sheet : " + indexSheet);
             _dataToRead = _databaseToRead.dialogueDatas[indexSheet];
             _dataToRead.indexDialogue = -1;
             _dialoguesToRead = _dataToRead.dialogueFR;
@@ -92,7 +92,7 @@ namespace TeamFive
             int index = dialogueData.indexDialogue;
 
             string speakerName = dialogueData.speakersName[index];
-            _charactersNames[0].text = speakerName;
+            //_charactersNames[0].text = speakerName;
 
             string id = dialogueData.speakersID[index];
             string[] idSplit = id.Split('_');
@@ -102,30 +102,18 @@ namespace TeamFive
             {
                 if (idSplit[1] == "COMEIN")
                 {
+                    Debug.Log(speakerName + " comes in");
                     CharactersInScene(true, speakerName);
                 } 
                 else if (idSplit[1] == "COMEOUT")
                 {
+                    Debug.Log(speakerName + " comes out");
                     CharactersInScene(false, speakerName);
                 }
             }
 
-            // show character speaking (fade in and others fade out)
-            for (int i = 0; i < _charactersImg.Count; i++)
-            {
-                if (_charactersImg[i].enabled)
-                {
-                    if (_charactersImg[i].gameObject.tag == "Untagged" || _charactersImg[i].gameObject.tag == speakerName)
-                    {
-                        Animation.instance.FadeIN(_charactersImg[i]);
-                        _charactersImg[i].gameObject.tag = speakerName;
-                    }
-                    else
-                    {
-                        Animation.instance.FadeOut(_charactersImg[i]);
-                    }
-                }
-            }
+            // Show speaker's speaking or not
+            CharactersSpeaking(speakerName);
 
             if (_readCoroutine == null)
             {
@@ -136,7 +124,6 @@ namespace TeamFive
                 else
                 {
                     // change sprite character
-                    Debug.Log("index : " + index);
                     _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[index], _dialogueSpeed));
                 }
                 AudioManager.instance.Play(dialogueData.sfx[index]);
@@ -194,6 +181,7 @@ namespace TeamFive
                         {
                             if (!_charactersImg[i].enabled)
                             {
+                                _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
                                 _charactersImg[i].gameObject.tag = character;
                                 _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "MED_CALM");
@@ -202,8 +190,30 @@ namespace TeamFive
                         }
                         break;
                     case "Diya":
+                        for (int i = 0; i < _charactersImg.Count; i++)
+                        {
+                            if (!_charactersImg[i].enabled)
+                            {
+                                _charactersNames[i].gameObject.SetActive(true);
+                                Animation.instance.FadeIN(_charactersImg[i]);
+                                _charactersImg[i].gameObject.tag = character;
+                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "Elfe.neutre");
+                                return;
+                            }
+                        }
                         break;
                     case "Syrdon":
+                        for (int i = 0; i < _charactersImg.Count; i++)
+                        {
+                            if (!_charactersImg[i].enabled)
+                            {
+                                _charactersNames[i].gameObject.SetActive(true);
+                                Animation.instance.FadeIN(_charactersImg[i]);
+                                _charactersImg[i].gameObject.tag = character;
+                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Syrdon, "Nain.neutre");
+                                return;
+                            }
+                        }
                         break;
                     default: break;
                 }
@@ -213,9 +223,34 @@ namespace TeamFive
             {
                 for (int i = 0; i < _charactersImg.Count; i++)
                 {
-                    if (_charactersImg[i].enabled && _charactersImg[i].gameObject.tag == character)
+                    if (_charactersImg[i].gameObject.tag == character)
                     {
-                        Animation.instance.FadeOut(_charactersImg[i]);
+                        StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
+                        _charactersNames[i].gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
+
+        private void CharactersSpeaking(string speakerName)
+        {
+            // show character speaking img
+            for (int i = 0; i < _charactersImg.Count; i++)
+            {
+                if (_charactersImg[i].gameObject.activeSelf)
+                {
+                    if (_charactersImg[i].gameObject.tag == "Untagged" || _charactersImg[i].gameObject.tag == speakerName)
+                    {
+                        _charactersImg[i].gameObject.tag = speakerName;
+                        Animation.instance.SpeakerSpeaking(_charactersImg[i]);
+
+                        _charactersNames[i].text = speakerName;
+                        Animation.instance.TextFadeIn(_charactersNames[i]);
+                    }
+                    else
+                    {
+                        Animation.instance.SpeakerNotSpeaking(_charactersImg[i]);
+                        Animation.instance.TextFadeOut(_charactersNames[i]);
                     }
                 }
             }

@@ -22,9 +22,14 @@ namespace TeamFive
         public float intensity;
         public int strength;
 
-
         [Header("------FadeOut Fade in Time duration------")]
         public float fadeDuration;
+        public float textFadeDuration = 0.3f;
+        public float textFadeOut = 0.25f;
+
+        [Header("------Darken color when speaker not speaking------")]
+        public Color darkenColor;
+        public float darkenDuration;
 
         [Header("------Sprite Medhiv------")]
         [SerializeField] private List<Sprite> medhivSprite;
@@ -33,7 +38,6 @@ namespace TeamFive
         [Header("------Sprite Syrdon------")]
         [SerializeField] private List<Sprite> syrdonSprite;
 
-
         private void Awake()
         {
             if (instance == null)
@@ -41,17 +45,26 @@ namespace TeamFive
                 instance = this;
             }
         }
-
-
+        
         public void CameraShake()
         {
-
             backGround.transform.DOShakePosition(duration, intensity, strength, 2f, true);
             perso.transform.DOShakePosition(duration, intensity, strength, 2f, true);
         }
 
+        #region Speakers Speaking or not
+        public void SpeakerNotSpeaking(Image imageToFadeIn)
+        {
+            imageToFadeIn.DOColor(darkenColor, darkenDuration);
+        }
 
+        public void SpeakerSpeaking(Image imageToFadeIn)
+        {
+            imageToFadeIn.DOColor(Color.white, darkenDuration);
+        }
+        #endregion
 
+        #region Fade In/Out
         public void FadeIN(Image imageToFadeIn)
         {
             imageToFadeIn.gameObject.SetActive(true);
@@ -59,14 +72,27 @@ namespace TeamFive
         }
 
 
-
         public IEnumerator FadeOut(Image imageToFadeOut)
         {
             imageToFadeOut.DOFade(0f, fadeDuration);
             yield return new WaitForSeconds(fadeDuration);
             imageToFadeOut.gameObject.SetActive(false);
-
         }
+        #endregion
+
+        #region Text Fade In/Out
+        public void TextFadeIn(TextMeshProUGUI speaker)
+        {
+            speaker.DOFade(1f, textFadeDuration);
+        }
+
+        public void TextFadeOut(TextMeshProUGUI speaker)
+        {
+            speaker.DOFade(textFadeOut, textFadeDuration);
+        }
+        #endregion
+
+        #region Change characters sprite
         public enum persoName
         {
             Medhiv,
@@ -114,7 +140,8 @@ namespace TeamFive
             return null;
 
         }
+        #endregion
     }
 
-    
+
 }

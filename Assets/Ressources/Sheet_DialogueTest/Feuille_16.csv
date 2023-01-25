@@ -1,8 +1,8 @@
-ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Vous rigolez ? La dernière fois qu'un groupe d'aventuriers a fait ça, j'ai du nettoyer ma taverne pendant plus d'une journée.;;;;;;;;;;;;;;;;;;;
+ï»¿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
+PLAYER;Player;Vous rigolez ? La derniÃ¨re fois qu'un groupe d'aventuriers a fait Ã§a, j'ai du nettoyer ma taverne pendant plus d'une journÃ©e.;;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Je refuse !;;;;;;;;;;;;;;;;;;;
-MED_FRUSTRATED;Medhiv;Allons tavernier, vous n'allez pas gâcher une nuit pareil !;;;;;;;;;;;;;;;;;;;
-DIY_FRUSTRATED;Diya;Pour une fois, je suis du même avis que lui, laissez nous fêter notre victoire comme il se doit!;;;;;;;;;;;;;;;;;;;
+MED_FRUSTRATED;Medhiv;Allons tavernier, vous n'allez pas gÃ¢cher une nuit pareil !;;;;;;;;;;;;;;;;;;;
+DIY_FRUSTRATED;Diya;Pour une fois, je suis du mÃªme avis que lui, laissez nous fÃªter notre victoire comme il se doit!;;;;;;;;;;;;;;;;;;;
 SYR_CALM;Syrdon;Allons les amis, nous n'avons pas besoin de boire pour profiter. Et si je vous jouais un petit morceau ?;;;;10;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
