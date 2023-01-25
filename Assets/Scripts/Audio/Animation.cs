@@ -15,7 +15,7 @@ namespace TeamFive
 
         [Header("------Shaking scene------")]
         public GameObject backGround;
-        public GameObject perso;        
+        public GameObject perso;
 
         [Header("------CameraShake values------")]
         public float duration;
@@ -41,16 +41,16 @@ namespace TeamFive
                 instance = this;
             }
         }
-        
+
 
         public void CameraShake()
         {
-            
+
             backGround.transform.DOShakePosition(duration, intensity, strength, 2f, true);
             perso.transform.DOShakePosition(duration, intensity, strength, 2f, true);
         }
 
-        
+
 
         public void FadeIN(Image imageToFadeIn)
         {
@@ -58,7 +58,7 @@ namespace TeamFive
             imageToFadeIn.DOFade(1f, fadeDuration);
         }
 
-        
+
 
         public IEnumerator FadeOut(Image imageToFadeOut)
         {
@@ -67,5 +67,54 @@ namespace TeamFive
             imageToFadeOut.gameObject.SetActive(false);
 
         }
+        public enum persoName
+        {
+            Medhiv,
+            Diya,
+            Syrdon,
+        };
+
+        public Sprite GetSprite(persoName perso, string spriteName)
+        {
+
+            switch (perso)
+            {
+                case persoName.Medhiv:
+                    for (int i = 0; i < medhivSprite.Count; i++)
+                    {
+                        if (medhivSprite[i].name == spriteName)
+                        {
+                            return medhivSprite[i];
+                        }
+
+                    }
+                    break;
+                case persoName.Diya:
+                    for (int i = 0; i < diyaSprite.Count; i++)
+                    {
+                        if (diyaSprite[i].name == spriteName)
+                        {
+                            return diyaSprite[i];
+                        }
+
+                    }
+                    break;
+                case persoName.Syrdon:
+                    for (int i = 0; i < syrdonSprite.Count; i++)
+                    {
+                        if (syrdonSprite[i].name == spriteName)
+                        {
+                            return syrdonSprite[i];
+                        }
+                    }
+                    break;
+            }
+            
+            Debug.LogWarning("Le nom du sprite n'existe pas : " + spriteName);
+            return null;
+
+        }
     }
+
+    
 }
