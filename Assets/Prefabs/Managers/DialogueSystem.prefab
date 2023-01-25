@@ -48,8 +48,6 @@ MonoBehaviour:
   _choicesToDisplay:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _dialogueToDisplay:
   - {fileID: 0}
   - {fileID: 0}
