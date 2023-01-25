@@ -4,13 +4,12 @@ namespace TeamFive
     using System;
     using UnityEngine;
     using DG.Tweening;
-
+    using JetBrains.Annotations;
+    using UnityEngine.Rendering;
 
     public class AudioManager : MonoBehaviour
     {
         public Sound[] sounds;
-
-        SoundData SoundData;
 
         public static AudioManager instance;
 
@@ -20,6 +19,11 @@ namespace TeamFive
         [SerializeField] private string currentSound;
         public string CurrentSound { get => currentSound; private set => currentSound = value; }
 
+
+        bool bool1 = false;
+        bool bool2 = false;
+        bool bool3 = false;
+        bool bool4 = false;        
 
         void Awake()
         {
@@ -44,7 +48,81 @@ namespace TeamFive
                 s.source.outputAudioMixerGroup = s.audioMixer;
             }
         }
-        
+ 
+        private void Update()
+        {
+            if (bool1 && bool2 && bool3 && bool4)
+            {
+                bool1 = false;
+                bool2 = false;
+                bool3 = false;
+                bool4 = false;
+            }
+        }
+
+        private void Start()
+        {
+            StartCoroutine(MusicRandom());
+        }
+
+
+        public IEnumerator MusicRandom()
+        {
+            string musique1 = "SD_Musique01";
+            string musique2 = "SD_Musique02";
+            string musique3 = "SD_Musique03";
+            string musique4 = "SD_Musique04";
+
+            float duration1 = 207f;
+            float duration2 = 158f;
+            float duration3 = 148f;
+            float duration4 = 228f;
+
+            int xcount = UnityEngine.Random.Range(0, 4);
+            
+            if (xcount == 0 && bool1 == false)
+            {
+                Play(musique1);
+                currentSound = musique1;
+                bool1 = true;
+                yield return new WaitForSeconds(duration1);
+                StopFade();
+
+            }
+            if (xcount == 1 && bool2 == false)
+            {
+                Play(musique2);
+                currentSound = musique2;
+                bool2 = true;
+                yield return new WaitForSeconds(duration2);
+                StopFade();
+
+
+            }
+            if (xcount == 2 && bool3 == false)
+            {
+                Play(musique3);
+                currentSound = musique3;
+                bool3 = true;
+                yield return new WaitForSeconds(duration3);
+                StopFade();
+
+
+            }
+            if (xcount == 3 && bool4 == false)
+            {
+                Play(musique4);
+                currentSound = musique4;
+                bool4 = true;
+                yield return new WaitForSeconds(duration4);
+                StopFade();
+
+            }
+            StartCoroutine(MusicRandom());
+
+
+        }
+
 
         public void Play(string name)
         {
