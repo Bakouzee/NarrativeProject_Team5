@@ -78,8 +78,40 @@ namespace TeamFive
 
         private void ReadSentence(DialogueData dialogueData)
         {
-            _charactersNames[0].text = dialogueData.speakersName[dialogueData.indexDialogue];
-            _charactersImg[0].DOFade(1, 0.3f);
+            string speakerName = dialogueData.speakersName[dialogueData.indexDialogue];
+            if (dialogueData.indexDialogue > 0)
+            {
+                string previousSpeaker = dialogueData.speakersName[dialogueData.indexDialogue - 1];
+            }
+
+            string id = dialogueData.speakersID[dialogueData.indexDialogue];
+            string[] idSplit = id.Split('_');
+
+            if(idSplit[1] == "COMEIN")
+            {
+                CharactersInScene(true, speakerName);
+            } 
+            else if (idSplit[1] == "COMEOUT")
+            {
+                CharactersInScene(false, speakerName);
+            }
+            else
+            {
+                // show character speaking (fade in)
+                for(int i = 0; i < _charactersImg.Count; i++)
+                {
+                    if (_charactersImg[i].IsActive())
+                    {
+                        Animation.instance.FadeIN(_charactersImg[i]);
+                        _charactersImg[i].gameObject.tag = speakerName;
+                        Animation.instance.FadeOut();
+                        break;
+                    }
+                }
+            }
+
+            _charactersNames[0].text = speakerName;
+
             if(_readCoroutine == null)
             {
                 _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[dialogueData.indexDialogue], _dialogueSpeed));
@@ -108,9 +140,9 @@ namespace TeamFive
         }
         #endregion
 
-        private void CharactersInScene(int nberChar = 0, List<Sprite> charSprites = null)
+        private void CharactersInScene(bool comeIn, string character = null)
         {
-            if (nberChar <= 0)
+            if (character == null)
             {
                 for (int i = 0; i < _charactersImg.Count; i++)
                 {
@@ -119,10 +151,39 @@ namespace TeamFive
                 return;
             }
 
-            for(int i = 0; i < nberChar; i++)
+            if (comeIn)
             {
-                _charactersImg[i].gameObject.SetActive(true);
-                _charactersImg[i].sprite = charSprites[i];
+                switch (character)
+                {
+                    case "Medhiv":
+                        // Display img
+                        for(int i = 0; i < _charactersImg.Count; i++)
+                        {
+                            if (_charactersImg[i].IsActive())
+                            {
+                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "MED_CALM");
+                                _charactersImg[i].gameObject.SetActive(true);
+                                return;
+                            }
+                        }
+                        break;
+                    case "Diya":
+                        break;
+                    case "Syrdon":
+                        break;
+                    default: break;
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < _charactersImg.Count; i++)
+                {
+                    if (_charactersImg[i].IsActive())
+                    {
+                        // fade out img
+                    }
+                }
             }
         }
 
