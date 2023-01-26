@@ -29,6 +29,9 @@ namespace TeamFive
         [Header("------Darken color when speaker not speaking------")]
         public Color darkenColor;
         public float darkenDuration;
+        public float scaleInDuration;
+        public float scaleOutNumber;
+        public float scaleOutDuration;
 
         [Header("------Sprite Medhiv------")]
         [SerializeField] private List<Sprite> medhivSprite;
@@ -61,15 +64,52 @@ namespace TeamFive
         {
             imageToFadeIn.DOColor(Color.white, darkenDuration);
         }
+
+        public void ScaleIn(string speaker, Image speakerImg)
+        {
+            switch (speaker)
+            {
+                case "Medhiv":
+                    speakerImg.transform.DOScale(4, scaleInDuration);
+                    return;
+                case "Diya":
+                    speakerImg.transform.DOScale(4, scaleInDuration);
+                    return;
+                case "Syrdon":
+                    speakerImg.transform.DOScale(2.5f, scaleInDuration);
+                    return;
+            }
+        }
+
+        public void ScaleOut(string nonSpeakerName, Image speakerImg)
+        {
+            switch (nonSpeakerName)
+            {
+                case "Medhiv":
+                    float scaleOutMed = speakerImg.transform.localScale.x - scaleOutNumber;
+                    scaleOutMed = Mathf.Clamp(scaleOutMed, 3.9f, 4);
+                    speakerImg.transform.DOScale(scaleOutMed, scaleOutDuration);
+                    return;
+                case "Diya":
+                    float scaleOutDiy = speakerImg.transform.localScale.x - scaleOutNumber;
+                    scaleOutDiy = Mathf.Clamp(scaleOutDiy, 3.9f, 4);
+                    speakerImg.transform.DOScale(scaleOutDiy, scaleOutDuration);
+                    return;
+                case "Syrdon":
+                    float scaleOutSyr = speakerImg.transform.localScale.x - scaleOutNumber;
+                    scaleOutSyr = Mathf.Clamp(scaleOutSyr, 2.4f, 2.5f);
+                    speakerImg.transform.DOScale(scaleOutSyr, scaleOutDuration);
+                    return;
+            }
+        }
         #endregion
 
-        #region Fade In/Out
+        #region Speakers Comes -> Fade In/Out
         public void FadeIN(Image imageToFadeIn)
         {
             imageToFadeIn.gameObject.SetActive(true);
             imageToFadeIn.DOFade(1f, fadeDuration);
         }
-
 
         public IEnumerator FadeOut(Image imageToFadeOut)
         {
@@ -77,6 +117,7 @@ namespace TeamFive
             yield return new WaitForSeconds(fadeDuration);
             imageToFadeOut.gameObject.SetActive(false);
         }
+
         #endregion
 
         #region Text Fade In/Out
@@ -99,7 +140,7 @@ namespace TeamFive
             Syrdon,
         };
 
-        public Sprite GetSprite(persoName perso, string spriteName)
+        public Sprite ChangeSprite(persoName perso, string spriteName)
         {
 
             switch (perso)
@@ -111,7 +152,6 @@ namespace TeamFive
                         {
                             return medhivSprite[i];
                         }
-
                     }
                     break;
                 case persoName.Diya:
@@ -121,7 +161,6 @@ namespace TeamFive
                         {
                             return diyaSprite[i];
                         }
-
                     }
                     break;
                 case persoName.Syrdon:

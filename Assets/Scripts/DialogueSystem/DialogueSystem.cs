@@ -60,9 +60,9 @@ namespace TeamFive
             {
                 _dialogueTxt.text = "";
                 _dialogueTxt.text = _dialoguesToRead[_dataToRead.indexDialogue];
-                //_dataToRead.indexDialogue++;
                 StopCoroutine(_readCoroutine);
                 _readCoroutine = null;
+                AudioManager.instance.Pause("SD_Text");
                 return;
             }
 
@@ -93,7 +93,6 @@ namespace TeamFive
             int index = dialogueData.indexDialogue;
 
             string speakerName = dialogueData.speakersName[index];
-            //_charactersNames[0].text = speakerName;
 
             string id = dialogueData.speakersID[index];
             string[] idSplit = id.Split('_');
@@ -116,6 +115,9 @@ namespace TeamFive
             // Show speaker's speaking or not
             CharactersSpeaking(speakerName);
 
+            // Change sprite about character's feeling
+            CharactersFeeling(id);
+
             if (_readCoroutine == null)
             {
                 if(dialogueData.speakersID[index] == "SKIP")
@@ -127,7 +129,7 @@ namespace TeamFive
                     // change sprite character
                     _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[index], _dialogueSpeed));
                 }
-                AudioManager.instance.Play(dialogueData.sfx[index]);
+                AudioManager.instance.Play("SD_Text");
             }
         }
 
@@ -153,14 +155,15 @@ namespace TeamFive
 
             if (willBeSkipped)
             {
-                //_dataToRead.indexDialogue++;
                 _readCoroutine = null;
                 NextSentence();
                 yield break;
             }
+            AudioManager.instance.Pause("SD_Text");
         }
         #endregion
 
+        #region Characters Settings
         private void CharactersInScene(bool comeIn, string character = null)
         {
             if (character == null || character == "Player")
@@ -185,7 +188,7 @@ namespace TeamFive
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
                                 _charactersImg[i].gameObject.tag = character;
-                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "MED_CALM");
+                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, "MED_CALM");
                                 return;
                             }
                         }
@@ -198,7 +201,7 @@ namespace TeamFive
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
                                 _charactersImg[i].gameObject.tag = character;
-                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Medhiv, "Elfe.neutre");
+                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, "DIY_CALM");
                                 return;
                             }
                         }
@@ -211,7 +214,7 @@ namespace TeamFive
                                 _charactersNames[i].gameObject.SetActive(true);
                                 Animation.instance.FadeIN(_charactersImg[i]);
                                 _charactersImg[i].gameObject.tag = character;
-                                _charactersImg[i].sprite = Animation.instance.GetSprite(Animation.persoName.Syrdon, "Nain.neutre");
+                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, "Nain.neutre");
                                 return;
                             }
                         }
@@ -244,6 +247,7 @@ namespace TeamFive
                     {
                         _charactersImg[i].gameObject.tag = speakerName;
                         Animation.instance.SpeakerSpeaking(_charactersImg[i]);
+                        Animation.instance.ScaleIn(speakerName, _charactersImg[i]);
 
                         _charactersNames[i].text = speakerName;
                         Animation.instance.TextFadeIn(_charactersNames[i]);
@@ -251,12 +255,63 @@ namespace TeamFive
                     else
                     {
                         Animation.instance.SpeakerNotSpeaking(_charactersImg[i]);
+                        Animation.instance.ScaleOut(_charactersImg[i].gameObject.tag, _charactersImg[i]);
                         Animation.instance.TextFadeOut(_charactersNames[i]);
                     }
                 }
             }
         }
 
+        private void CharactersFeeling(string spriteID)
+        {
+            // Guarding Case
+            if(spriteID == "" || spriteID == "PLAYER" || spriteID == "SKIP") return;
+
+            string[] spriteIDSplit = spriteID.Split('_');
+            string prefix = spriteIDSplit[0]; // MED, DIY, SYR
+            string suffix = spriteIDSplit[1]; // FEELING
+
+            if(suffix == "COMEIN" || suffix == "COMEOUT") return;
+
+            switch (prefix)
+            {
+                case "MED":
+                    for(int i = 0; i < _charactersImg.Count; i++)
+                    {
+                        if (_charactersImg[i].color.a >= 1 && _charactersImg[i].gameObject.tag == "Medhiv")
+                        {
+                            Debug.Log("Feeling Change for " + prefix + " : " + suffix);
+                            _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, spriteID);
+                            return;
+                        }
+                    }
+                    return;
+                case "DIY":
+                    for (int i = 0; i < _charactersImg.Count; i++)
+                    {
+                        if (_charactersImg[i].color.a >= 1 && _charactersImg[i].gameObject.tag == "Diya")
+                        {
+                            Debug.Log("Feeling Change for " + prefix + " : " + suffix);
+                            _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Diya, spriteID);
+                            return;
+                        }
+                    }
+                    return;
+                case "SYR":
+                    for (int i = 0; i < _charactersImg.Count; i++)
+                    {
+                        if (_charactersImg[i].color.a >= 1 && _charactersImg[i].gameObject.tag == "Syrdon")
+                        {
+                            Debug.Log("Feeling Change for " + prefix + " : " + suffix);
+                            _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, spriteID);
+                            return;
+                        }
+                    }
+                    return;
+            }
+        }
+
+        #endregion
         private void ShowDialogue(bool isDialogue)
         {
             if (isDialogue)
@@ -286,6 +341,4 @@ namespace TeamFive
             }
         }
     }
-
-    
 }
