@@ -217,7 +217,7 @@ namespace TeamFive
 
                                 Animation.instance.FadeIN(_charactersImg[i]);
                                 _charactersImg[i].gameObject.tag = "Syrdon";
-                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, "Nain.neutre");
+                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, "SYR_CALM");
                                 return;
                             }
                         }

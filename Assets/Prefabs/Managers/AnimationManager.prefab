@@ -60,11 +60,16 @@ MonoBehaviour:
   medhivSprite:
   - {fileID: 21300000, guid: 019341996fa515040a98b9b7a1f42670, type: 3}
   - {fileID: 21300000, guid: c54348ba0b77cdb4ba174938d9a52d8c, type: 3}
+  - {fileID: 21300000, guid: 39f9798764134cc49ade118133cd246e, type: 3}
   - {fileID: 21300000, guid: f1418b8f70ad10c44a6585d51472b00e, type: 3}
   - {fileID: 21300000, guid: 8b639590aca7da846bd4977cbd28d939, type: 3}
   - {fileID: 21300000, guid: 4807c864750099a4093730ac879c7534, type: 3}
   - {fileID: 21300000, guid: b00561c660eae2d4388959ca03b786a5, type: 3}
+  - {fileID: 21300000, guid: 673b154d410dddb47a7375b7f922bf43, type: 3}
+  - {fileID: 21300000, guid: 07f605c7aea46c749b10d96189219bbd, type: 3}
   - {fileID: 21300000, guid: ef92bcff843bbbf4ebe888b4ca0c273d, type: 3}
+  - {fileID: 21300000, guid: 400a11576de2a234fa312c9abd471ea4, type: 3}
+  - {fileID: 21300000, guid: f86f7ceba5fef2f438341b7f293e3cc6, type: 3}
   diyaSprite:
   - {fileID: 21300000, guid: 9f3de0a299f4d254f8743b682c3bc9e0, type: 3}
   - {fileID: 21300000, guid: 09eab5c1e24412645a78c25493f8da89, type: 3}
@@ -76,4 +81,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fe70729804b364c469d3fea3b55c032b, type: 3}
   - {fileID: 21300000, guid: d226e53784967624585bcbda9280b608, type: 3}
   syrdonSprite:
-  - {fileID: 21300000, guid: 4d7710a696e85da4a91e67c1bed3730c, type: 3}
+  - {fileID: 21300000, guid: 1234cda330eeeb14c9a0f691f2c7331c, type: 3}
+  - {fileID: 21300000, guid: bd0d978ade432d848b060085ff902c9e, type: 3}
+  - {fileID: 21300000, guid: 065fca8605116a04d8e27c43d3f26d06, type: 3}

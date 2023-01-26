@@ -76,7 +76,7 @@ namespace TeamFive
                     speakerImg.transform.DOScale(4, scaleInDuration);
                     return;
                 case "Syrdon":
-                    speakerImg.transform.DOScale(2.5f, scaleInDuration);
+                    speakerImg.transform.DOScale(3.5f, scaleInDuration);
                     return;
             }
         }
@@ -97,7 +97,7 @@ namespace TeamFive
                     return;
                 case "Syrdon":
                     float scaleOutSyr = speakerImg.transform.localScale.x - scaleOutNumber;
-                    scaleOutSyr = Mathf.Clamp(scaleOutSyr, 2.4f, 2.5f);
+                    scaleOutSyr = Mathf.Clamp(scaleOutSyr, 3.4f, 3.5f);
                     speakerImg.transform.DOScale(scaleOutSyr, scaleOutDuration);
                     return;
             }
