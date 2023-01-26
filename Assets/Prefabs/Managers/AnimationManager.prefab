@@ -55,7 +55,7 @@ MonoBehaviour:
   darkenColor: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
   darkenDuration: 1
   scaleInDuration: 0.2
-  scaleOutNumber: 0.1
+  scaleOutNumber: 0.25
   scaleOutDuration: 0.2
   medhivSprite:
   - {fileID: 21300000, guid: 019341996fa515040a98b9b7a1f42670, type: 3}
@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec03f4b9f930d4443b36cec553425cd1, type: 3}
   - {fileID: 21300000, guid: fe70729804b364c469d3fea3b55c032b, type: 3}
   - {fileID: 21300000, guid: d226e53784967624585bcbda9280b608, type: 3}
+  - {fileID: 21300000, guid: c2e27798e74f9b14989a21dc27e699ce, type: 3}
   syrdonSprite:
   - {fileID: 21300000, guid: d3867d3544ecf6f41b223de905c6ca3f, type: 3}
   - {fileID: 21300000, guid: 1234cda330eeeb14c9a0f691f2c7331c, type: 3}
@@ -88,3 +89,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7554ffa05d93d144496326013aeba7d9, type: 3}
   - {fileID: 21300000, guid: bd0d978ade432d848b060085ff902c9e, type: 3}
   - {fileID: 21300000, guid: 065fca8605116a04d8e27c43d3f26d06, type: 3}
+  - {fileID: 21300000, guid: 56088f367f038de4ab7f296e749006c8, type: 3}
+  - {fileID: 21300000, guid: 3bd16ce5f7dffe14da3baaad5053e122, type: 3}

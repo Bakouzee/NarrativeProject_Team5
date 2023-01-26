@@ -68,10 +68,12 @@ namespace TeamFive
         private IEnumerator SceneStart(string firstLine)
         {
             // Display first line
+            Animation.instance.TextFadeInAll(_textBlackScreen);
             _textBlackScreen.text = firstLine;
 
             yield return new WaitForSeconds(_startDialogueDuration);
 
+            Animation.instance.TextFadeOutAll(_textBlackScreen);
             StartCoroutine(Animation.instance.FadeOut(_blackScreen));
 
             _dataToRead.indexDialogue++;
@@ -85,10 +87,16 @@ namespace TeamFive
 
             yield return new WaitForSeconds(1f);
 
+            Animation.instance.TextFadeInAll(_textBlackScreen);
             _textBlackScreen.text = endLine;
 
             yield return new WaitForSeconds(_endDialogueDuration);
 
+            Animation.instance.TextFadeOutAll(_textBlackScreen);
+
+            yield return new WaitForSeconds(0.5f);
+
+            Animation.instance.TextFadeInAll(_textBlackScreen);
             _textBlackScreen.text = _thanksForPlayingDemo;
         }
         #endregion
@@ -170,10 +178,16 @@ namespace TeamFive
                 if (idSplit[1] == "COMEIN")
                 {
                     CharactersInScene(true, idSplit[0]);
-                } 
+                    CharactersSpeaking(speakerName);
+                    NextSentence();
+                    return;
+                }
                 else if (idSplit[1] == "COMEOUT")
                 {
                     CharactersInScene(false, idSplit[0], speakerName);
+                    //CharactersSpeaking(speakerName);
+                    NextSentence();
+                    return;
                 }
             }
 
@@ -219,9 +233,9 @@ namespace TeamFive
                 yield return new WaitForSeconds(speed);
             }
 
+            _readCoroutine = null;
             if (willBeSkipped)
             {
-                _readCoroutine = null;
                 NextSentence();
                 yield break;
             }

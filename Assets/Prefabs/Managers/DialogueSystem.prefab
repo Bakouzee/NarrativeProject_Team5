@@ -61,4 +61,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _dialogueSpeed: 0.1
+  _dialogueSpeed: 0.02
+  _blackScreen: {fileID: 0}
+  _textBlackScreen: {fileID: 0}
+  _startDialogueDuration: 3
+  _endDialogueDuration: 3
+  _thanksForPlayingDemo: Thanks for playing our Demo !

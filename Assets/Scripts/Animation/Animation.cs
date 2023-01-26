@@ -88,17 +88,17 @@ namespace TeamFive
             {
                 case "Medhiv":
                     float scaleOutMed = speakerImg.transform.localScale.x - scaleOutNumber;
-                    scaleOutMed = Mathf.Clamp(scaleOutMed, 3.9f, 4);
+                    scaleOutMed = Mathf.Clamp(scaleOutMed, 3.75f, 4);
                     speakerImg.transform.DOScale(scaleOutMed, scaleOutDuration);
                     return;
                 case "Diya":
                     float scaleOutDiy = speakerImg.transform.localScale.x - scaleOutNumber;
-                    scaleOutDiy = Mathf.Clamp(scaleOutDiy, 3.9f, 4);
+                    scaleOutDiy = Mathf.Clamp(scaleOutDiy, 3.75f, 4);
                     speakerImg.transform.DOScale(scaleOutDiy, scaleOutDuration);
                     return;
                 case "Syrdon":
                     float scaleOutSyr = speakerImg.transform.localScale.x - scaleOutNumber;
-                    scaleOutSyr = Mathf.Clamp(scaleOutSyr, 3.4f, 3.5f);
+                    scaleOutSyr = Mathf.Clamp(scaleOutSyr, 3.25f, 3.5f);
                     speakerImg.transform.DOScale(scaleOutSyr, scaleOutDuration);
                     return;
             }
@@ -130,6 +130,15 @@ namespace TeamFive
         public void TextFadeOut(TextMeshProUGUI speaker)
         {
             speaker.DOFade(textFadeOut, textFadeDuration);
+        }
+
+        public void TextFadeOutAll(TextMeshProUGUI speaker)
+        {
+            speaker.DOFade(0, textFadeDuration);
+        }
+        public void TextFadeInAll(TextMeshProUGUI speaker)
+        {
+            speaker.DOFade(1, textFadeDuration);
         }
         #endregion
 
