@@ -73,10 +73,10 @@ namespace TeamFive
             string musique3 = "SD_Musique03";
             string musique4 = "SD_Musique04";
 
-            float duration1 = 207f;
-            float duration2 = 158f;
-            float duration3 = 148f;
-            float duration4 = 228f;
+            float duration1 = 209f;
+            float duration2 = 160f;
+            float duration3 = 150f;
+            float duration4 = 230f;
 
             int xcount = UnityEngine.Random.Range(0, 4);
             
