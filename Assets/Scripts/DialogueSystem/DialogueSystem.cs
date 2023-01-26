@@ -273,6 +273,11 @@ namespace TeamFive
 
             if(suffix == "COMEIN" || suffix == "COMEOUT") return;
 
+            if(suffix == "ANGRY" || suffix == "UPSET")
+            {
+                Animation.instance.CameraShake();
+            }
+
             switch (prefix)
             {
                 case "MED":
