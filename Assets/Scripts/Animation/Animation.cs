@@ -1,6 +1,5 @@
 namespace TeamFive
 {
-    using System;
     using UnityEngine;
     using DG.Tweening;
     using UnityEngine.UI;
@@ -141,7 +140,11 @@ namespace TeamFive
 
         }
         #endregion
+
+        public void Vibrate(long strength)
+        {
+            Vibration.Init();
+            Vibration.Vibrate(strength);
+        }
     }
-
-
 }
