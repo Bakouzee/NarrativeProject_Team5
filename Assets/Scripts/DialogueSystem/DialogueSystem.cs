@@ -103,12 +103,12 @@ namespace TeamFive
                 if (idSplit[1] == "COMEIN")
                 {
                     Debug.Log(speakerName + " comes in");
-                    CharactersInScene(true, speakerName);
+                    CharactersInScene(true, idSplit[0]);
                 } 
                 else if (idSplit[1] == "COMEOUT")
                 {
                     Debug.Log(speakerName + " comes out");
-                    CharactersInScene(false, speakerName);
+                    CharactersInScene(false, idSplit[0], speakerName);
                 }
             }
 
@@ -129,7 +129,6 @@ namespace TeamFive
                     // change sprite character
                     _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[index], _dialogueSpeed));
                 }
-                AudioManager.instance.Play("SD_Text");
             }
         }
 
@@ -140,6 +139,8 @@ namespace TeamFive
                 _dialogueTxt.text = "";
                 yield break;
             }
+
+            AudioManager.instance.Play("SD_Text");
 
             _dialogueTxt.text = "";
             int i = 0;
@@ -164,62 +165,69 @@ namespace TeamFive
         #endregion
 
         #region Characters Settings
-        private void CharactersInScene(bool comeIn, string character = null)
+        private void CharactersInScene(bool comeIn, string characterID = null, string character = null)
         {
-            if (character == null || character == "Player")
-            {
-                for (int i = 0; i < _charactersImg.Count; i++)
-                {
-                    _charactersImg[i].gameObject.SetActive(false);
-                }
-                return;
-            }
+            if (characterID == null) return;
 
             if (comeIn)
             {
-                switch (character)
+                switch (characterID)
                 {
-                    case "Medhiv":
-                        // Display img
+                    case "MED":
+                        // Display img and name
                         for(int i = 0; i < _charactersImg.Count; i++)
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
+                                Debug.Log("Medhiv comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
+                                _charactersNames[i].text = character;
+
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = character;
+                                _charactersImg[i].gameObject.tag = "Medhiv";
                                 _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, "MED_CALM");
                                 return;
                             }
                         }
                         break;
-                    case "Diya":
+                    case "DIY":
                         for (int i = 0; i < _charactersImg.Count; i++)
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
+                                Debug.Log("Diya comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
+                                _charactersNames[i].text = character;
+
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = character;
-                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, "DIY_CALM");
+                                _charactersImg[i].gameObject.tag = "Diya";
+                                _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Diya, "DIY_CALM");
                                 return;
                             }
                         }
                         break;
-                    case "Syrdon":
+                    case "SYR":
                         for (int i = 0; i < _charactersImg.Count; i++)
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
+                                Debug.Log("Syrdon comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
+                                _charactersNames[i].text = character;
+
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = character;
+                                _charactersImg[i].gameObject.tag = "Syrdon";
                                 _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, "Nain.neutre");
                                 return;
                             }
                         }
                         break;
-                    default: break;
+                    default:
+                        /*for (int i = 0; i < _charactersImg.Count; i++)
+                        {
+                            _charactersImg[i].gameObject.SetActive(false);
+                        }*/
+                        return;
                 }
 
             }
@@ -227,11 +235,31 @@ namespace TeamFive
             {
                 for (int i = 0; i < _charactersImg.Count; i++)
                 {
-                    if (_charactersImg[i].gameObject.tag == character)
+                    switch (characterID)
                     {
-                        StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
-                        _charactersNames[i].gameObject.SetActive(false);
+                        case "MED":
+                            if (_charactersImg[i].gameObject.tag == "Medhiv")
+                            {
+                                StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
+                                _charactersNames[i].gameObject.SetActive(false);
+                            }
+                            return;
+                        case "DIY":
+                            if (_charactersImg[i].gameObject.tag == "Diya")
+                            {
+                                StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
+                                _charactersNames[i].gameObject.SetActive(false);
+                            }
+                            return;
+                        case "SYR":
+                            if (_charactersImg[i].gameObject.tag == "Syrdon")
+                            {
+                                StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
+                                _charactersNames[i].gameObject.SetActive(false);
+                            }
+                            return;
                     }
+                    
                 }
             }
         }

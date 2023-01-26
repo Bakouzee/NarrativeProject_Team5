@@ -1,10 +1,10 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ? (chiffre);Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;coucou;hello;;;1;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;
+PLAYER;Player;*Ouverture du bar*;;;; ;;;;;;;;;;;;;;;
+MED_COMEIN;;;;;;;;;;;;;;;;;;;;;
+DIY_COMEIN;;;;;;;;;;;;;;;;;;;;;
+SYR_COMEIN;;;;;;;;;;;;;;;;;;;;;
+PLAYER;Player;Bonjour aventuriers !;;;;;;;;;;;;;;;;;;;
+MED_CALM;Medhiv;Salut tavernier, 3 verres d'hydromel;;;;1;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
