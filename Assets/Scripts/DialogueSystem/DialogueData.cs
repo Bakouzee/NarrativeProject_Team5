@@ -14,7 +14,6 @@ namespace TeamFive
         public List<string> sfx = new();
         public List<string> vfx = new();
         public string playerChoice;
-        public bool isPlayerChoice;
         public float timerChoice;
     }
 }
