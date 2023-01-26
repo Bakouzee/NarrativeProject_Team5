@@ -4,11 +4,14 @@ namespace TeamFive
     using System.Collections.Generic;
     using Unity.VisualScripting;
     using UnityEngine;
+    using UnityEngine.Audio;
     using UnityEngine.UI;
 
     public class MenuManager : MonoBehaviour
     {
         [SerializeField] private GameObject background;
+
+        [SerializeField] private AudioMixer audio;
 
         [SerializeField] private Image song;
         [SerializeField] private DialogueSystem dialogueSystem;
@@ -20,6 +23,8 @@ namespace TeamFive
         [SerializeField] private Sprite songOn;
         [SerializeField] private Sprite songOff;
 
+
+        private bool songIsOn = false;
         private bool isDeploy = false;
         private Coroutine actualCorout;
 
@@ -37,7 +42,18 @@ namespace TeamFive
 
         public void ChangeSong()
         {
-
+            if(songIsOn) 
+            {
+                audio.SetFloat("Master", -80);
+                song.sprite = songOff;
+                songIsOn = false;
+            }
+            else
+            {
+                audio.SetFloat("Master", 0);
+                song.sprite = songOn;
+                songIsOn = true;
+            }
         }
 
         public void changeFR()
@@ -57,25 +73,27 @@ namespace TeamFive
         private IEnumerator deployCorout()
         {
             background.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             buttonSong.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             buttonFR.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             buttonEN.SetActive(true);
             isDeploy = true;
+            actualCorout = null;
         }
         
         private IEnumerator reployCorout()
         {
             buttonEN.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             buttonFR.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             buttonSong.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             background.SetActive(false);
             isDeploy = false;
+            actualCorout = null;
         }
     }
 
