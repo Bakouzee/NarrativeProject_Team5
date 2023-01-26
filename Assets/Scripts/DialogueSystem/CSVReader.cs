@@ -32,7 +32,7 @@ namespace TeamFive
             for (int i = 1; i <= nbFile; i++)
             {
                 DialogueData data = new DialogueData();
-                filePath = "Assets/Ressources/Sheet_DialogueTest/Feuille_" + i + ".csv";//Sheet_Dialogue
+                filePath = "Assets/Ressources/Sheet_Dialogue/Feuille_" + i + ".csv";
                 ReadSheet(data);
             }
         }

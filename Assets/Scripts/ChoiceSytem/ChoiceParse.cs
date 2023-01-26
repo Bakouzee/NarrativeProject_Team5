@@ -11,7 +11,7 @@ namespace TeamFive
         [SerializeField] private ChoiceDatabase choiceDatabase;
         ScriptableChoice choice;
 
-        string filePath = "Assets/Ressources/Sheet_DialogueTest/Choix.csv";//Sheet_Dialogue
+        string filePath = "Assets/Ressources/Sheet_Dialogue/Choix.csv";
         bool endOfFile = false;
 
         [SerializeField] private int indexLine;

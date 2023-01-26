@@ -9,8 +9,11 @@ namespace TeamFive
 
     public class DialogueSystem : MonoBehaviour
     {
+        [Header("----Databases----")]
         [SerializeField] private DialogueDatabase _databaseToRead;
         [SerializeField] private ChoiceDatabase _choiceDatabase;
+
+        [Header("----UI----")]
         [SerializeField] private List<GameObject> _choicesToDisplay;
         [SerializeField] private List<GameObject> _dialogueToDisplay;
         [SerializeField] private TextMeshProUGUI _dialogueTxt;
@@ -18,11 +21,16 @@ namespace TeamFive
         [SerializeField] private List<Image> _charactersImg;
         [SerializeField] private float _dialogueSpeed = 0.1f;
 
+        [Header("----First Line----")]
+        [SerializeField] private Image _blackScreen;
+        [SerializeField] private TextMeshProUGUI _textBlackScreen;
+        [SerializeField] private float _startDialogueDuration = 3f;
+
+
         private DialogueManager dialogueMana;
         private DialogueData _dataToRead;
         private List<string> _dialoguesToRead = new();
         private string _choices;
-        private bool _isDialogueDone;
         private Coroutine _readCoroutine;
 
         #region Properties
@@ -37,6 +45,26 @@ namespace TeamFive
             dialogueMana = DialogueManager.Instance;
             _dataToRead = _databaseToRead.dialogueDatas[0];
             ChangeLanguage(_dataToRead);
+            if(DialogueManager.Instance.GetSetCurrentLanguage == DialogueManager.Language.FR)
+            {
+                StartCoroutine(SceneStart(_dataToRead.dialogueFR[0]));
+            } else
+            {
+                StartCoroutine(SceneStart(_dataToRead.dialogueEN[0]));
+            }
+            //ReadSentence(_dataToRead);
+        }
+
+        private IEnumerator SceneStart(string firstLine)
+        {
+            // Display first line
+            _textBlackScreen.text = firstLine;
+
+            yield return new WaitForSeconds(_startDialogueDuration);
+
+            StartCoroutine(Animation.instance.FadeOut(_blackScreen));
+
+            _dataToRead.indexDialogue++;
             ReadSentence(_dataToRead);
         }
 
@@ -102,12 +130,10 @@ namespace TeamFive
             {
                 if (idSplit[1] == "COMEIN")
                 {
-                    Debug.Log(speakerName + " comes in");
                     CharactersInScene(true, idSplit[0]);
                 } 
                 else if (idSplit[1] == "COMEOUT")
                 {
-                    Debug.Log(speakerName + " comes out");
                     CharactersInScene(false, idSplit[0], speakerName);
                 }
             }
@@ -179,7 +205,6 @@ namespace TeamFive
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
-                                Debug.Log("Medhiv comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
                                 _charactersNames[i].text = character;
 
@@ -195,7 +220,6 @@ namespace TeamFive
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
-                                Debug.Log("Diya comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
                                 _charactersNames[i].text = character;
 
@@ -211,7 +235,6 @@ namespace TeamFive
                         {
                             if (!_charactersImg[i].gameObject.activeSelf)
                             {
-                                Debug.Log("Syrdon comes in");
                                 _charactersNames[i].gameObject.SetActive(true);
                                 _charactersNames[i].text = character;
 
@@ -222,12 +245,7 @@ namespace TeamFive
                             }
                         }
                         break;
-                    default:
-                        /*for (int i = 0; i < _charactersImg.Count; i++)
-                        {
-                            _charactersImg[i].gameObject.SetActive(false);
-                        }*/
-                        return;
+                    default: return;
                 }
 
             }
