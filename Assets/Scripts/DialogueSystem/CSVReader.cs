@@ -28,7 +28,6 @@ namespace TeamFive
 
         public void ReadAllSheets(int nbFile)
         {
-
             for (int i = 1; i <= nbFile; i++)
             {
                 DialogueData data = new DialogueData();

@@ -1,6 +1,5 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ? (chiffre);Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;"Aller, c'est l'heure d'ouvrir la taverne.
-J'espère que les 3 aventuriers d'hier reviendront ce soir. Ils ont l'air intéressant.";;;; ;;;;;;;;;;;;;;;
+PLAYER;Player;Aller, c'est l'heure d'ouvrir la taverne. J'espère que les 3 aventuriers d'hier reviendront ce soir. Ils ont l'air intéressant.;Come on, it's time to open the tavern. I hope the 3 adventurers from yesterday will come back tonight. They looked interesting.;;; ;;;;;;;;;;;;;;;
 MED_COMEIN;;;;;;;;;;;;;;;;;;;;;
 DIY_COMEIN;;;;;;;;;;;;;;;;;;;;;
 SYR_COMEIN;;;;;;;;;;;;;;;;;;;;;

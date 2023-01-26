@@ -46,7 +46,9 @@ namespace TeamFive
                 // Stocke les valeurs 
                 var data_values = data_String.Split(';');
 
-                for(int i = 1; i <= 2; i++)
+                if (data_values[0] == "") { endOfFile = true; break; }
+
+                for (int i = 1; i <= 2; i++)
                 {
                     choice.buttonFR.Add(data_values[i]);
                 }

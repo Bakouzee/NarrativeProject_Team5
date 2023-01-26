@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 0}
   perso: {fileID: 0}
-  duration: 5
-  intensity: 10
-  strength: 8
+  duration: 1
+  intensity: 20
+  strength: 20
   fadeDuration: 1
   textFadeDuration: 0.3
   textFadeOut: 0.25

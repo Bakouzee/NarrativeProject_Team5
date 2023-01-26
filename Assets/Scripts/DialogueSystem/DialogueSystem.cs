@@ -25,13 +25,18 @@ namespace TeamFive
         [SerializeField] private Image _blackScreen;
         [SerializeField] private TextMeshProUGUI _textBlackScreen;
         [SerializeField] private float _startDialogueDuration = 3f;
+        [SerializeField] private float _endDialogueDuration = 3f;
+        [SerializeField] private string _thanksForPlayingDemo;
 
 
         private DialogueManager dialogueMana;
         private DialogueData _dataToRead;
         private List<string> _dialoguesToRead = new();
+        private List<int> _endGameSheets = new();
         private string _choices;
         private Coroutine _readCoroutine;
+
+        private bool _isEnding;
 
         #region Properties
         public DialogueData GetSetDialogueData { get { return _dataToRead; } set { _dataToRead = value; } }
@@ -42,6 +47,11 @@ namespace TeamFive
 
         private void Start()
         {
+            _endGameSheets.Add(12);
+            _endGameSheets.Add(13);
+            _endGameSheets.Add(19);
+            _endGameSheets.Add(20);
+
             dialogueMana = DialogueManager.Instance;
             _dataToRead = _databaseToRead.dialogueDatas[0];
             ChangeLanguage(_dataToRead);
@@ -52,9 +62,9 @@ namespace TeamFive
             {
                 StartCoroutine(SceneStart(_dataToRead.dialogueEN[0]));
             }
-            //ReadSentence(_dataToRead);
         }
 
+        #region Start / End Demo
         private IEnumerator SceneStart(string firstLine)
         {
             // Display first line
@@ -68,22 +78,35 @@ namespace TeamFive
             ReadSentence(_dataToRead);
         }
 
-        public void ChangeLanguage(DialogueData dialogueLanguageToUse)
+        private IEnumerator DemoEnd(string endLine)
         {
-            if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.FR)
-            {
-                _dialoguesToRead = dialogueLanguageToUse.dialogueFR;
-            } 
-            else if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.EN)
-            {
-                _dialoguesToRead = dialogueLanguageToUse.dialogueEN;
-            }
+            // Display first line
+            Animation.instance.FadeIN(_blackScreen);
+
+            yield return new WaitForSeconds(1f);
+
+            _textBlackScreen.text = endLine;
+
+            yield return new WaitForSeconds(_endDialogueDuration);
+
+            _textBlackScreen.text = _thanksForPlayingDemo;
         }
+        #endregion
 
         #region Read Sentence
         // Drag and drop in the BTN_Next
         public void NextSentence()
         {
+            if (_dataToRead.indexDialogue == _dialoguesToRead.Count - 2 && _isEnding)
+            {
+                _dataToRead.indexDialogue++;
+                string lastLine = _dialoguesToRead[_dataToRead.indexDialogue];
+
+                StartCoroutine(DemoEnd(lastLine));
+
+                return;
+            }
+
             if (_readCoroutine != null)
             {
                 _dialogueTxt.text = "";
@@ -107,10 +130,26 @@ namespace TeamFive
 
         public void NextSheet(int indexSheet)
         {
-            //Debug.Log("index sheet : " + indexSheet);
+            // Check if it's the last sheet to read
+            for(int i = 0; i < _endGameSheets.Count; i++)
+            {
+                if(indexSheet == _endGameSheets[i])
+                {
+                    _isEnding = true;
+                    break;
+                }
+            }
+
             _dataToRead = _databaseToRead.dialogueDatas[indexSheet];
             _dataToRead.indexDialogue = -1;
-            _dialoguesToRead = _dataToRead.dialogueFR;
+            if (DialogueManager.Instance.GetSetCurrentLanguage == DialogueManager.Language.FR)
+            {
+                _dialoguesToRead = _dataToRead.dialogueFR;
+            }
+            else
+            {
+                _dialoguesToRead = _dataToRead.dialogueEN;
+            }
             ShowDialogue(true);
 
             NextSentence();
@@ -363,6 +402,8 @@ namespace TeamFive
         }
 
         #endregion
+
+        #region Dialogue Settings
         private void ShowDialogue(bool isDialogue)
         {
             if (isDialogue)
@@ -387,9 +428,28 @@ namespace TeamFive
                 for(int i = 0; i < _choicesToDisplay.Count; i++)
                 {
                     TextMeshProUGUI choiceTxt = _choicesToDisplay[i].GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>();
-                    choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonFR[i];
+                    if(DialogueManager.Instance.GetSetCurrentLanguage == DialogueManager.Language.FR)
+                    {
+                        choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonFR[i];
+                    }
+                    else
+                    {
+                        choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonEN[i];
+                    }
                 }
             }
         }
+        public void ChangeLanguage(DialogueData dialogueLanguageToUse)
+        {
+            if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.FR)
+            {
+                _dialoguesToRead = dialogueLanguageToUse.dialogueFR;
+            } 
+            else if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.EN)
+            {
+                _dialoguesToRead = dialogueLanguageToUse.dialogueEN;
+            }
+        }
+        #endregion
     }
 }

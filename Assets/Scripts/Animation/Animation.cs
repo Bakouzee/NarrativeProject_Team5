@@ -47,7 +47,8 @@ namespace TeamFive
                 instance = this;
             }
         }
-        
+
+        [ContextMenu("Shake")]
         public void CameraShake()
         {
             backGround.transform.DOShakePosition(duration, intensity, strength, 2f, true);
