@@ -42,11 +42,11 @@ namespace TeamFive
 
         public void ChangeLanguage(DialogueData dialogueLanguageToUse)
         {
-            if(dialogueMana.GetCurrentLanguage == DialogueManager.Language.FR)
+            if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.FR)
             {
                 _dialoguesToRead = dialogueLanguageToUse.dialogueFR;
             } 
-            else if(dialogueMana.GetCurrentLanguage == DialogueManager.Language.EN)
+            else if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.EN)
             {
                 _dialoguesToRead = dialogueLanguageToUse.dialogueEN;
             }

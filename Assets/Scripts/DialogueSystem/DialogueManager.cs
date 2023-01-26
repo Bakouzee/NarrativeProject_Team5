@@ -32,7 +32,7 @@ namespace TeamFive
         [SerializeField] private DialogueSystem dialogueSystem;
 
         #region Properties
-        public Language GetCurrentLanguage => _currentLanguage;
+        public Language GetSetCurrentLanguage {  get { return _currentLanguage; } set { _currentLanguage = value; } }
         #endregion
 
         private void Update()
