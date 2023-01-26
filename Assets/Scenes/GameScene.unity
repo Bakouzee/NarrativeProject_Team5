@@ -637,6 +637,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1002100644}
     - target: {fileID: 2380499679753524543, guid: 6085ffc57e670a24cb80e0cbfdfcf25f, type: 3}
+      propertyPath: _dialogueSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380499679753524543, guid: 6085ffc57e670a24cb80e0cbfdfcf25f, type: 3}
       propertyPath: _textBlackScreen
       value: 
       objectReference: {fileID: 6192816271486067371}
