@@ -300,7 +300,7 @@ namespace TeamFive
                                 _charactersNames[i].text = character;
 
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = "Medhiv";
+                                _charactersImg[i].gameObject.tag = character;
                                 _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, "MED_CALM");
                                 return;
                             }
@@ -315,7 +315,7 @@ namespace TeamFive
                                 _charactersNames[i].text = character;
 
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = "Diya";
+                                _charactersImg[i].gameObject.tag = character;
                                 _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Diya, "DIY_CALM");
                                 return;
                             }
@@ -330,7 +330,7 @@ namespace TeamFive
                                 _charactersNames[i].text = character;
 
                                 Animation.instance.FadeIN(_charactersImg[i]);
-                                _charactersImg[i].gameObject.tag = "Syrdon";
+                                _charactersImg[i].gameObject.tag = character;
                                 _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Syrdon, "SYR_CALM");
                                 return;
                             }
@@ -347,7 +347,7 @@ namespace TeamFive
                     switch (characterID)
                     {
                         case "MED":
-                            if (_charactersImg[i].gameObject.tag == "Medhiv")
+                            if (_charactersImg[i].gameObject.tag == "Varnas")
                             {
                                 StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
                                 _charactersNames[i].gameObject.SetActive(false);
@@ -420,7 +420,7 @@ namespace TeamFive
                 case "MED":
                     for(int i = 0; i < _charactersImg.Count; i++)
                     {
-                        if (_charactersImg[i].color.a >= 1 && _charactersImg[i].gameObject.tag == "Medhiv")
+                        if (_charactersImg[i].color.a >= 1 && _charactersImg[i].gameObject.tag == "Varnas")
                         {
                             Debug.Log("Feeling Change for " + prefix + " : " + suffix);
                             _charactersImg[i].sprite = Animation.instance.ChangeSprite(Animation.persoName.Medhiv, spriteID);
