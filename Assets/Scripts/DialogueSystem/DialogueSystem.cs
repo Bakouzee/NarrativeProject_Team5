@@ -188,7 +188,7 @@ namespace TeamFive
             {
                 if (idSplit[1] == "COMEIN")
                 {
-                    CharactersInScene(true, idSplit[0]);
+                    CharactersInScene(true, idSplit[0], speakerName);
                     CharactersSpeaking(speakerName);
                     NextSentence();
                     return;
@@ -338,7 +338,6 @@ namespace TeamFive
                         break;
                     default: return;
                 }
-
             }
             else
             {
@@ -349,6 +348,7 @@ namespace TeamFive
                         case "MED":
                             if (_charactersImg[i].gameObject.tag == "Varnas")
                             {
+                                Debug.Log(characterID + " comes out.");
                                 StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
                                 _charactersNames[i].gameObject.SetActive(false);
                             }
@@ -356,6 +356,8 @@ namespace TeamFive
                         case "DIY":
                             if (_charactersImg[i].gameObject.tag == "Diya")
                             {
+                                Debug.Log(characterID + " comes out.");
+
                                 StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
                                 _charactersNames[i].gameObject.SetActive(false);
                             }
@@ -363,12 +365,13 @@ namespace TeamFive
                         case "SYR":
                             if (_charactersImg[i].gameObject.tag == "Syrdon")
                             {
+                                Debug.Log(characterID + " comes out.");
+
                                 StartCoroutine(Animation.instance.FadeOut(_charactersImg[i]));
                                 _charactersNames[i].gameObject.SetActive(false);
                             }
                             return;
                     }
-                    
                 }
             }
         }
