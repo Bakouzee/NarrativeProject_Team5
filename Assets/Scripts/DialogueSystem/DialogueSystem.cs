@@ -43,6 +43,8 @@ namespace TeamFive
 
         private bool _isEnding;
 
+        public Animator m_Animator;
+
         #region Properties
         public DialogueData GetSetDialogueData { get { return _dataToRead; } set { _dataToRead = value; } }
         public TextMeshProUGUI GetDialogueTxt => _dialogueTxt;
@@ -461,11 +463,14 @@ namespace TeamFive
                 for (int i = 0; i < _dialogueToDisplay.Count; i++)
                 {
                     _dialogueToDisplay[i].SetActive(true);
+                    m_Animator.SetBool("DoAnim", false);
+
                 }
 
                 for (int i = 0; i < _choicesToDisplay.Count; i++)
                 {
                     _choicesToDisplay[i].SetActive(false);
+                    m_Animator.SetBool("DoAnim", false);
                 }
             }
             else
@@ -473,6 +478,7 @@ namespace TeamFive
                 for (int i = 0; i < _dialogueToDisplay.Count; i++)
                 {
                     _dialogueToDisplay[i].SetActive(false);
+                    m_Animator.SetBool("DoAnim", true);
                 }
 
                 _choices = _dataToRead.playerChoice;
