@@ -5,7 +5,7 @@ MED_COMEOUT;Medhiv;;;;;;;;;;;;;;;;;;;;
 SYR_WORRIED;Syrdon;Il ne changera jamais ...;He will never change...;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Faire partie de son groupe n'a pas l'air d'être de tout repos ...;Being part of his group doesn't seem to be easy...;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;Il a toujours été comme ça, mais au fond il sait qu'il a besoin de nous pour avancer.;He's always been like that, but deep down he knows he needs us to move forward.;;;;;;;;;;;;;;;;;;
-PLAYER;Player;*Deux heures plus tard*;*Two hours later*;;;;;;;;;;;;;;;;;;
+WAIT;;*Deux heures plus tard*;*Two hours later*;;;;;;;;;;;;;;;;;;
 MED_COMEIN;Medhiv;;;;;;;;;;;;;;;;;;;;
 MED_SKYEYES;Medhiv;Bon, j'ai rélféchi, et j'ai trouver un moyen de nous départager ... Et si on faisait un concours de boisson ?;Well, I've been thinking about it, and I've come up with a way to break the tie... How about a drinking contest?;;;;;;;;;;;;;;;;;;
 SYR_BOTHER;Syrdon;Je ne tiens pas l'alcool, tu le sais très bien Medhiv.;I can't hold my liquor, you know that very well Medhiv.;;;;;;;;;;;;;;;;;;

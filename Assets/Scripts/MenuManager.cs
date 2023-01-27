@@ -60,14 +60,20 @@ namespace TeamFive
         {
             DialogueManager.Instance.GetSetCurrentLanguage = DialogueManager.Language.FR;
             dialogueSystem.ChangeLanguage(dialogueSystem.GetSetDialogueData);
-            dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetSetDialogueData.indexDialogue];
+            if (dialogueSystem.GetDialogueTxt.gameObject.activeSelf)
+            {
+                dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetSetDialogueData.indexDialogue];
+            }
         }
 
         public void changeEN()
         {
             DialogueManager.Instance.GetSetCurrentLanguage = DialogueManager.Language.EN;
             dialogueSystem.ChangeLanguage(dialogueSystem.GetSetDialogueData);
-            dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetSetDialogueData.indexDialogue];
+            if (dialogueSystem.GetDialogueTxt.gameObject.activeSelf)
+            {
+                dialogueSystem.GetDialogueTxt.text = dialogueSystem.GetDialoguesToRead[dialogueSystem.GetSetDialogueData.indexDialogue];
+            }
         }
 
         private IEnumerator deployCorout()

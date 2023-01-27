@@ -17,9 +17,7 @@ namespace TeamFive
 
         public void ButtonChoice(int indexButton)
         {
-            //Debug.Log("Choices : " + dialogueSystem.GetChoices);
             int choiceNumber = Convert.ToInt32(dialogueSystem.GetChoices);
-            //Debug.Log("Choice number : " + choiceNumber);
             _dataToRead = _choiceDatabase.choices[choiceNumber - 1];
 
             switch (indexButton)
@@ -27,7 +25,6 @@ namespace TeamFive
                 case 1:
                     _indexSheet = int.Parse(_dataToRead.sheetNumber[0]);
                     _indexSheet--;
-                    //Debug.Log("index sheet : " + _indexSheet);
                     dialogueSystem.NextSheet(_indexSheet);
                     break;
                 case 2:

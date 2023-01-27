@@ -64,6 +64,9 @@ MonoBehaviour:
   _dialogueSpeed: 0.02
   _blackScreen: {fileID: 0}
   _textBlackScreen: {fileID: 0}
-  _startDialogueDuration: 3
-  _endDialogueDuration: 3
+  _startDialogueDuration: 5
+  _endDialogueDuration: 5
   _thanksForPlayingDemo: Thanks for playing our Demo !
+  _timeBlackScreenDuration: 2.5
+  _timeTextAppearsDuration: 1.5
+  _timeDialogueAppearsDuration: 1

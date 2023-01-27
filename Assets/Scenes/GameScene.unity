@@ -641,14 +641,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6192816271486067371}
     - target: {fileID: 2380499679753524543, guid: 6085ffc57e670a24cb80e0cbfdfcf25f, type: 3}
-      propertyPath: _endDialogueDuration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380499679753524543, guid: 6085ffc57e670a24cb80e0cbfdfcf25f, type: 3}
-      propertyPath: _startDialogueDuration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380499679753524543, guid: 6085ffc57e670a24cb80e0cbfdfcf25f, type: 3}
       propertyPath: _charactersImg.Array.data[0]
       value: 
       objectReference: {fileID: 1815504291350329470}
@@ -984,6 +976,18 @@ PrefabInstance:
       propertyPath: backGround
       value: 
       objectReference: {fileID: 1815504291779541509}
+    - target: {fileID: 6439655668214905792, guid: 57d3241edce35be49bd1bb1b792d423d, type: 3}
+      propertyPath: _timeBlackScreenDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439655668214905792, guid: 57d3241edce35be49bd1bb1b792d423d, type: 3}
+      propertyPath: _timeTextAppearsDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439655668214905792, guid: 57d3241edce35be49bd1bb1b792d423d, type: 3}
+      propertyPath: _timeDialogueAppearsDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6439655668214905793, guid: 57d3241edce35be49bd1bb1b792d423d, type: 3}
       propertyPath: m_Name
       value: AnimationManager

@@ -28,9 +28,14 @@ namespace TeamFive
         [SerializeField] private float _endDialogueDuration = 3f;
         [SerializeField] private string _thanksForPlayingDemo;
 
-
+        [Header("----Time Goes By----")]
+        [SerializeField] private float _timeBlackScreenDuration = 3f;
+        [SerializeField] private float _timeTextAppearsDuration = 3f;
+        [SerializeField] private float _timeDialogueAppearsDuration = 3f;
+        
         private DialogueManager dialogueMana;
         private DialogueData _dataToRead;
+        private ScriptableChoice _choicesToRead;
         private List<string> _dialoguesToRead = new();
         private List<int> _endGameSheets = new();
         private string _choices;
@@ -132,12 +137,16 @@ namespace TeamFive
                 ShowDialogue(false);
                 return;
             }
-
             ReadSentence(_dataToRead);
         }
 
         public void NextSheet(int indexSheet)
         {
+            for(int i = 0; i < _choicesToDisplay.Count; i++)
+            {
+                _choicesToDisplay[i].SetActive(false);
+            }
+
             // Check if it's the last sheet to read
             for(int i = 0; i < _endGameSheets.Count; i++)
             {
@@ -203,6 +212,11 @@ namespace TeamFive
                 {
                     _readCoroutine = StartCoroutine(ReadCharByChar(_dialoguesToRead[index], _dialogueSpeed, true));
                 }
+                else if(dialogueData.speakersID[index] == "WAIT")
+                {
+                    _dialogueTxt.text = "";
+                    StartCoroutine(TimeGoesBy(_dialoguesToRead[index]));
+                }
                 else
                 {
                     // change sprite character
@@ -240,6 +254,28 @@ namespace TeamFive
                 yield break;
             }
             AudioManager.instance.Pause("SD_Text");
+        }
+
+        private IEnumerator TimeGoesBy(string textToDisplay)
+        {
+            Animation.instance.FadeIN(_blackScreen);
+
+            yield return new WaitForSeconds(_timeBlackScreenDuration);
+
+            _textBlackScreen.text = textToDisplay;
+            Animation.instance.TextFadeInAll(_textBlackScreen);
+
+            yield return new WaitForSeconds(_timeTextAppearsDuration);
+
+            Animation.instance.TextFadeOutAll(_textBlackScreen);
+
+            yield return new WaitForSeconds(_timeBlackScreenDuration);
+
+            StartCoroutine(Animation.instance.FadeOut(_blackScreen));
+
+            yield return new WaitForSeconds(_timeDialogueAppearsDuration);
+
+            NextSentence();
         }
         #endregion
 
@@ -364,7 +400,7 @@ namespace TeamFive
         private void CharactersFeeling(string spriteID)
         {
             // Guarding Case
-            if(spriteID == "" || spriteID == "PLAYER" || spriteID == "SKIP") return;
+            if(spriteID == "" || spriteID == "PLAYER" || spriteID == "SKIP" || spriteID == "WAIT") return;
 
             string[] spriteIDSplit = spriteID.Split('_');
             string prefix = spriteIDSplit[0]; // MED, DIY, SYR
@@ -422,12 +458,15 @@ namespace TeamFive
         {
             if (isDialogue)
             {
-                for(int i = 0; i < _dialogueToDisplay.Count; i++)
+                for (int i = 0; i < _dialogueToDisplay.Count; i++)
                 {
                     _dialogueToDisplay[i].SetActive(true);
                 }
 
-                _choicesToDisplay[0].transform.parent.gameObject.SetActive(false);
+                for (int i = 0; i < _choicesToDisplay.Count; i++)
+                {
+                    _choicesToDisplay[i].SetActive(false);
+                }
             }
             else
             {
@@ -436,13 +475,13 @@ namespace TeamFive
                     _dialogueToDisplay[i].SetActive(false);
                 }
 
-                _choicesToDisplay[0].transform.parent.gameObject.SetActive(true);
                 _choices = _dataToRead.playerChoice;
 
-                for(int i = 0; i < _choicesToDisplay.Count; i++)
+                for (int i = 0; i < _choicesToDisplay.Count; i++)
                 {
+                    _choicesToDisplay[i].SetActive(true);
                     TextMeshProUGUI choiceTxt = _choicesToDisplay[i].GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>();
-                    if(DialogueManager.Instance.GetSetCurrentLanguage == DialogueManager.Language.FR)
+                    if (DialogueManager.Instance.GetSetCurrentLanguage == DialogueManager.Language.FR)
                     {
                         choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonFR[i];
                     }
@@ -458,10 +497,24 @@ namespace TeamFive
             if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.FR)
             {
                 _dialoguesToRead = dialogueLanguageToUse.dialogueFR;
+                for (int i = 0; i < _choicesToDisplay.Count; i++)
+                {
+                    if (!_choicesToDisplay[i].activeSelf) return;
+
+                    TextMeshProUGUI choiceTxt = _choicesToDisplay[i].GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>();
+                    choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonFR[i];
+                }
             } 
             else if(dialogueMana.GetSetCurrentLanguage == DialogueManager.Language.EN)
             {
                 _dialoguesToRead = dialogueLanguageToUse.dialogueEN;
+                for (int i = 0; i < _choicesToDisplay.Count; i++)
+                {
+                    if (!_choicesToDisplay[i].activeSelf) return;
+                    
+                    TextMeshProUGUI choiceTxt = _choicesToDisplay[i].GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>();
+                    choiceTxt.text = _choiceDatabase.choices[int.Parse(_choices) - 1].buttonEN[i];
+                }
             }
         }
         #endregion

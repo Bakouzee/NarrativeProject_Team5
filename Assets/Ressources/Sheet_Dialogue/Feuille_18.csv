@@ -3,7 +3,7 @@ PLAYER;Player;Bon bon ... Je vais vous servir mais faites attention à ne pas ..
 MED_HYPE;Medhiv;C'est ce qu'on voulait entendre ! Celui qui l'emporte sera définitivement le plus résistant du groupe !;That's what we wanted to hear! Whoever wins will definitely be the toughest of the bunch!;;;;;;;;;;;;;;;;;;
 DIY_HYPE;Diya;Je vais te montrer à quel point tu es faible !;I'll show you how weak you are!;;;;;;;;;;;;;;;;;;
 SYR_WORRIED;Syrdon;Je suppose que je n'ai pas le choix...;I guess I have no choice...;;;;;;;;;;;;;;;;;;
-MED_DRINK;Player;*15 verres d'hydromel plus tard*;*15 glasses of mead later*;;;;;;;;;;;;;;;;;;
+WAIT;;*15 verres d'hydromel plus tard*;*15 glasses of mead later*;;;;;;;;;;;;;;;;;;
 MED_DRUNK;Medhiv;Alors Diya, on abandonne ? *hic*;So Diya, do you give up? *hic*;;;;;;;;;;;;;;;;;;
 DIY_DRUNK;Diya;Dans tes rêves, je vais gagner *hic*;You wish! I will win *hic*;;;;;;;;;;;;;;;;;;
 SYR_DRUNK;Syrdon;Pourquoi j'ai fait ça...;Why did I do this...;;;;;;;;;;;;;;;;;;
