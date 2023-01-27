@@ -1,7 +1,7 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
 PLAYER;Player;C'est fini pour ce soir aventuriers, vous devriez aller dormir.;It's over for tonight adventurers, you should go to sleep.;;;;;;;;;;;;;;;;;;
 MED_DRUNK;Varnas;Le tavernier a raison *hic*, je ne tiendrai pas un verre de plus.;The tavern keeper is right *hic*, I can't take another drink.;;;;;;;;;;;;;;;;;;
-DIY_LAUGH;Diya;Alors Medhiv, on abandonne ?;So Medhiv, do you give up?;;;;;;;;;;;;;;;;;;
+DIY_LAUGH;Diya;Alors Varnas, on abandonne ?;So Varnas, do you give up?;;;;;;;;;;;;;;;;;;
 SYR_HAPPY;Syrdon;Pour une fois qu'il est raisonnable.;For once he is reasonable.;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Le lendemain...;The next day...;;;;;;;;;;;;;;;;;;
 MED_COMEIN;;;;;;;;;;;;;;;;;;;;;
