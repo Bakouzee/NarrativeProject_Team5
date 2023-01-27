@@ -1,12 +1,12 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
 PLAYER;Player;Laisser votre amie boire en paix voyons.;Let your friend drink in peace.;;;;;;;;;;;;;;;;;;
-MED_HAUGHTY;Medhiv;Amie ? Je ne serai jamais amie avec une elfe, pour qui me prenez vous ? C'est simplement une compagnon d'aventure.;Friend? I will never be friends with an elf, what do you take me for? She's just an adventure companion.;;;;;;;;;;;;;;;;;;
+MED_HAUGHTY;Varnas;Amie ? Je ne serai jamais amie avec une elfe, pour qui me prenez vous ? C'est simplement une compagnon d'aventure.;Friend? I will never be friends with an elf, what do you take me for? She's just an adventure companion.;;;;;;;;;;;;;;;;;;
 SYR_UPSET;Syrdon;Et voila ... Il recommence ...;And here it is ... It starts again...;;;;;;;;;;;;;;;;;;
-MED_LAUGH;Medhiv;Elle a quand même essayer de frapper l'ogre avec ses poings après avoir été désarmée.;She still tried to hit the ogre with her fists after being disarmed.;;;;;;;;;;;;;;;;;;
-MED_HAUGHTY;Medhiv;Je n'ai pas la tête pour me battre avec vous ce soir.;I don't have the head for fighting with you tonight.;;;;;;;;;;;;;;;;;;
-MED_HYPE;Medhiv;Et si on faisait un concours de boisson plutôt ?;How about a drinking contest instead?;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Je suis d'humeur joueuse ce soir !;I'm in a playful mood tonight!;;;;;;;;;;;;;;;;;;
-SYR_WORRIED;Syrdon;Je ne tiens pas l'alcool, tu le sais très bien Medhiv.;I can't hold my liquor, you know that very well Medhiv.;;;;;;;;;;;;;;;;;;
+MED_LAUGH;Varnas;Elle a quand même essayer de frapper l'ogre avec ses poings après avoir été désarmée.;She still tried to hit the ogre with her fists after being disarmed.;;;;;;;;;;;;;;;;;;
+MED_HAUGHTY;Varnas;Je n'ai pas la tête pour me battre avec vous ce soir.;I don't have the head for fighting with you tonight.;;;;;;;;;;;;;;;;;;
+MED_HYPE;Varnas;Et si on faisait un concours de boisson plutôt ?;How about a drinking contest instead?;;;;;;;;;;;;;;;;;;
+MED_CALM;Varnas;Je suis d'humeur joueuse ce soir !;I'm in a playful mood tonight!;;;;;;;;;;;;;;;;;;
+SYR_WORRIED;Syrdon;Je ne tiens pas l'alcool, tu le sais très bien Varnas.;I can't hold my liquor, you know that very well Varnas.;;;;;;;;;;;;;;;;;;
 DIY_HYPE;Diya;Je suis pour !;I'm in!;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;Cette mission était bien trop éprouvante, j ai besoin de divertissement !;This mission was way too hard, I need some entertainment!;;;8;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

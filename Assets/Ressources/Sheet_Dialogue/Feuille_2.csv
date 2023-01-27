@@ -1,7 +1,7 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Medhiv, Diya, n'hésitez pas à poser vos affaires là bas !;Medhiv, Diya, feel free to put your stuff there!;;;;;;;;;;;;;;;;;;
+PLAYER;Player;Varnas, Diya, n'hésitez pas à poser vos affaires là bas !;Varnas, Diya, feel free to put your stuff there!;;;;;;;;;;;;;;;;;;
 DIY_COMEOUT;Diya;*quitte l'écran*;*leaves the screen*;;;;;;;;;;;;;;;;;;
-MED_COMEOUT;Medhiv;*quitte l'écran*;*leaves the screen*;;;2;;;;;;;;;;;;;;;
+MED_COMEOUT;Varnas;*quitte l'écran*;*leaves the screen*;;;2;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

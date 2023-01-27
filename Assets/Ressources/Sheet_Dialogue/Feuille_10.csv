@@ -3,9 +3,9 @@ PLAYER;Player;Pardonnez moi très cher, je ne voulais pas vous vexer...;Forgive 
 PLAYER;Player;Tenez, celui la est offert par la maison.;Here, this one is offered by the house.;;;;;;;;;;;;;;;;;;
 DIY_HAPPY;Diya;Vous savez vous faire pardonner en tout cas. Santé !;You know how to make up for it in any case. Cheers!;;;;;;;;;;;;;;;;;;
 SYR_COMEIN;Syrdon;;;;;;;;;;;;;;;;;;;;
-MED_COMEIN;Medhiv;Et bien Diya ? Tu bois sans nous ?;Well Diya? Are you drinking without us?;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Tu n'apprendras donc jamais les bonnes manières ...;So you'll never learn manners...;;;;;;;;;;;;;;;;;;
-DIY_DRUNK;Syrdon;Boucle là Medhiv, on mérite tous de boire un bon coup après ce combat.;Shut up Medhiv, we all deserve a good drink after this fight.;;;;;;;;;;;;;;;;;;
+MED_COMEIN;Varnas;Et bien Diya ? Tu bois sans nous ?;Well Diya? Are you drinking without us?;;;;;;;;;;;;;;;;;;
+MED_CALM;Varnas;Tu n'apprendras donc jamais les bonnes manières ...;So you'll never learn manners...;;;;;;;;;;;;;;;;;;
+DIY_DRUNK;Syrdon;Boucle là Varnas, on mérite tous de boire un bon coup après ce combat.;Shut up Varnas, we all deserve a good drink after this fight.;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;Tavernier, un autre verre !;Tavernier, another drink!;;;7;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

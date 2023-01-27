@@ -1,8 +1,8 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
 PLAYER;Player;Vous rigolez ? La dernière fois qu'un groupe d'aventuriers a fait ça, j'ai du nettoyer ma taverne pendant plus d'une journée.;Are you kidding? The last time a group of adventurers did this, I had to clean my tavern for more than a day.;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Je refuse !;I refuse!;;;;;;;;;;;;;;;;;;
-MED_FRUSTRATED;Medhiv;Allons tavernier, vous n'allez pas gâcher une nuit pareil !;Come on tavern keeper, you're not going to waste a night like that!;;;;;;;;;;;;;;;;;;
-DIY_FRUSTRATED;Diya;Pour une fois, je suis du même avis que lui, laissez nous fêter notre victoire comme il se doit!;For once, I agree with him, let us celebrate our victory as it should be!;;;;;;;;;;;;;;;;;;
+MED_FRUSTRATED;Varnas;Allons tavernier, vous n'allez pas gâcher une nuit pareil !;Come on tavern keeper, you're not going to waste a night like that!;;;;;;;;;;;;;;;;;;
+DIY_ANGRY;Diya;Pour une fois, je suis du même avis que lui, laissez nous fêter notre victoire comme il se doit!;For once, I agree with him, let us celebrate our victory as it should be!;;;;;;;;;;;;;;;;;;
 SYR_CALM;Syrdon;Allons les amis, nous n'avons pas besoin de boire pour profiter. Et si je vous jouais un petit morceau ?;Come on folks, we don't need to drink to enjoy. How about I play you a little tune?;;;10;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

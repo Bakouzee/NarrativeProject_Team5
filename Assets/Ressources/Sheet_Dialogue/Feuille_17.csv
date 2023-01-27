@@ -1,7 +1,7 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
 PLAYER;Player;Désolé aventuriers... Écoutez plutôt une bonne chanson de Syrdon !;Sorry adventurers... Listen to a good Syrdon song instead !;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Ecoutez l'ami, je suis pret à vous payer le double !;Listen friend, I'm willing to pay you double!;;;;;;;;;;;;;;;;;;
-MED_HYPE;Medhiv;Mais par tous les dieux, remplissez les verres et laissez moi humilier ces abrutis une fois de plus !;But by all the gods, fill the glasses and let me humiliate these jerks once again!;;;;;;;;;;;;;;;;;;
+MED_CALM;Varnas;Ecoutez l'ami, je suis pret à vous payer le double !;Listen friend, I'm willing to pay you double!;;;;;;;;;;;;;;;;;;
+MED_HYPE;Varnas;Mais par tous les dieux, remplissez les verres et laissez moi humilier ces abrutis une fois de plus !;But by all the gods, fill the glasses and let me humiliate these jerks once again!;;;;;;;;;;;;;;;;;;
 DIY_HYPE;Diya;Tavernier ! Faites moi le plaisir de remplir les verres que je montre à ce gringalet la descente d'une guerrière.;Tavern keeper! Do me the pleasure of filling the glasses that I show this gringalet the descent of a warrior.;;;;;;;;;;;;;;;;;;
 SYR_HYPE;Syrdon;Je ne prendrai pas parti dans cette discution, mais mon luth est prêt.;I will not take sides in this discussion, but my lute is ready.;;;fin n1;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;

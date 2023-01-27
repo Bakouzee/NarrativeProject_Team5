@@ -1,7 +1,7 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
-PLAYER;Player;Medhiv ! Syrdon ! Vous voilà bien chargés ! N'hésitez pas à poser vos affaires.;Medhiv ! Syrdon ! You are well loaded ! Don't hesitate to put down your stuff.;;;;;;;;;;;;;;;;;;
-MED_CALM;Medhiv;Merci tavernier ! On revient ...;Thank you tavern keeper! We come back ...;;;;;;;;;;;;;;;;;;
-MED_COMEOUT;Medhiv;;;;;;;;;;;;;;;;;;;;
+PLAYER;Player;Varnas ! Syrdon ! Vous voilà bien chargés ! N'hésitez pas à poser vos affaires.;Varnas ! Syrdon ! You are well loaded ! Don't hesitate to put down your stuff.;;;;;;;;;;;;;;;;;;
+MED_CALM;Varnas;Merci tavernier ! On revient ...;Thank you tavern keeper! We come back ...;;;;;;;;;;;;;;;;;;
+MED_COMEOUT;Varnas;;;;;;;;;;;;;;;;;;;;
 SYR_COMEOUT;Syrdon;;;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Et bien Diya, tu m'as l'aire fatiguée.;Well Diya, you look tired.;;;;;;;;;;;;;;;;;;
 DIY_CALM;Diya;En effet, on vient de se battre contre l'ogre des glaces. Je suis exténuée ...;Indeed, we just fought the ice ogre. I am exhausted ...;;;4;;;;;;;;;;;;;;;

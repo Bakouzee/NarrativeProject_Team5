@@ -1,11 +1,11 @@
 ﻿ID;Character;FR;EN;Sound;Anim;Player Choice ?;Timer ? (en sec);;;;;;;;;;;;;;
 PLAYER;Player;Vos camarades ont l'air de vous avoir abandonner.;Your comrades seem to have abandoned you.;;;;;;;;;;;;;;;;;;
-DIY_ANGRY;Diya;Medhiv doit surement être en train de se vanter auprès des autres aventuriers et Syrdon est aux toilettes. Ils ne devraient pas tarder à venir boire eux aussi.;Medhiv is probably bragging to the other adventurers and Syrdon is in the toilet. They should come soon to drink too.;;;;;;;;;;;;;;;;;;
+DIY_ANGRY;Diya;Varnas doit surement être en train de se vanter auprès des autres aventuriers et Syrdon est aux toilettes. Ils ne devraient pas tarder à venir boire eux aussi.;Varnas is probably bragging to the other adventurers and Syrdon is in the toilet. They should come soon to drink too.;;;;;;;;;;;;;;;;;;
 PLAYER;Player;Vous aviez raison, les voila !;You were right, here they are!;;;;;;;;;;;;;;;;;;
 MED_COMEIN;;;;;;;;;;;;;;;;;;;;;
 SYR_COMEIN;;;;;;;;;;;;;;;;;;;;;
-MED_HYPE;Medhiv;Et si on faisait un concours de boisson ? Je suis d'humeur joueuse ce soir !;How about a drinking contest? I'm in a playful mood tonight!;;;;;;;;;;;;;;;;;;
-SYR_BOTHER;Syrdon;Je ne tiens pas l'alcool, tu le sais très bien Medhiv.;I can't hold my liquor, you know that very well Medhiv.;;;;;;;;;;;;;;;;;;
+MED_HYPE;Varnas;Et si on faisait un concours de boisson ? Je suis d'humeur joueuse ce soir !;How about a drinking contest? I'm in a playful mood tonight!;;;;;;;;;;;;;;;;;;
+SYR_BOTHER;Syrdon;Je ne tiens pas l'alcool, tu le sais très bien Varnas.;I can't hold my liquor, you know that very well Varnas.;;;;;;;;;;;;;;;;;;
 DIY_HYPE;Diya;Je suis pour ! Cette mission était bien trop éprouvante, j'ai besoin de divertissement !;I'm in! This mission was way too hard, I need some fun!;;;8;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;
