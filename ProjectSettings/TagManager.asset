@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Medhiv
   - Diya
   - Syrdon
+  - Varnas
   layers:
   - Default
   - TransparentFX
