@@ -132,7 +132,7 @@ public static class Vibration
 #elif UNITY_IOS
         Handheld.Vibrate();
 #else
-        Handheld.Vibrate ();
+        //Handheld.Vibrate ();
 #endif
 #endif
         }
