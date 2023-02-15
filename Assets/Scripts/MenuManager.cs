@@ -11,7 +11,7 @@ namespace TeamFive
     {
         [SerializeField] private GameObject background;
 
-        [SerializeField] private AudioMixer audio;
+        [SerializeField] private AudioMixer audioMixer;
 
         [SerializeField] private Image song;
         [SerializeField] private DialogueSystem dialogueSystem;
@@ -44,13 +44,13 @@ namespace TeamFive
         {
             if(songIsOn) 
             {
-                audio.SetFloat("Master", -80);
+                audioMixer.SetFloat("Master", -80);
                 song.sprite = songOff;
                 songIsOn = false;
             }
             else
             {
-                audio.SetFloat("Master", 0);
+                audioMixer.SetFloat("Master", 0);
                 song.sprite = songOn;
                 songIsOn = true;
             }

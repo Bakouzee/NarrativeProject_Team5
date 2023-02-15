@@ -192,8 +192,8 @@ namespace TeamFive
 
         public void Vibrate(long strength)
         {
-            Vibration.Init();
-            Vibration.Vibrate(strength);
+            //Vibration.Init();
+            //Vibration.Vibrate(strength);
         }
     }
 }

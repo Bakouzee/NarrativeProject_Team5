@@ -405,7 +405,10 @@ namespace TeamFive
         private void CharactersFeeling(string spriteID)
         {
             // Guarding Case
-            if(spriteID == "" || spriteID == "PLAYER" || spriteID == "SKIP" || spriteID == "WAIT") return;
+            if (spriteID == "" || spriteID == "PLAYER" || spriteID == "SKIP" || spriteID == "WAIT")
+            {
+                return;
+            }
 
             string[] spriteIDSplit = spriteID.Split('_');
             string prefix = spriteIDSplit[0]; // MED, DIY, SYR

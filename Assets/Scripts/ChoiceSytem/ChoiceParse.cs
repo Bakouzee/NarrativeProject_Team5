@@ -9,17 +9,14 @@ namespace TeamFive
     public class ChoiceParse : MonoBehaviour
     {
         [SerializeField] private ChoiceDatabase choiceDatabase;
-        ScriptableChoice choice;
+        private ScriptableChoice choice;
 
-        string filePath = "Assets/Ressources/Sheet_Dialogue/Choix.csv";
-        bool endOfFile = false;
+        private string filePath;
 
         [SerializeField] private int indexLine;
 
-        private string data_String;
-
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             choiceDatabase.choices.Clear();
             ReadChoice();
@@ -27,50 +24,52 @@ namespace TeamFive
 
         private void ReadChoice()
         {
-            StreamReader strReader = new StreamReader(filePath);
 
-            for (int i = 0; i <= indexLine; i++)
+            TextAsset fileAsset = (TextAsset)Resources.Load("Sheet_Dialogue/Choix", typeof(TextAsset));
+            filePath = fileAsset.text;
+
+            // Stocke les valeurs 
+            var data_values = filePath.Split(';');//15
+
+            choice = new ScriptableChoice();
+            for(int i = 14; i < data_values.Length; i++)
             {
-                data_String = strReader.ReadLine();
+                string value = data_values[i];
+
+                if (value.Length < 1) continue;
+
+                switch (i % 14)
+                {
+                    case 0:
+                        if (value.Length < 1)
+                        {
+                            choiceDatabase.choices.Add(choice);
+                            return;
+                        }
+                        break;
+                    case 1:
+                        choice.buttonFR.Add(value);
+                        break;
+                    case 2:
+                        choice.buttonFR.Add(value);
+                        break;
+                    case 6:
+                        choice.buttonEN.Add(value);
+                        break;
+                    case 7:
+                        choice.buttonEN.Add(value);
+                        break;
+                    case 10:
+                        choice.sheetNumber.Add(value);
+                        break;
+                    case 11:
+                        choice.sheetNumber.Add(value);
+                        choiceDatabase.choices.Add(choice);
+                        choice = new();
+                        break;
+                    default: break;
+                }
             }
-
-            while (!endOfFile) // Tant qu'il y a une ligne non vide
-            {
-                choice = new ScriptableChoice();
-                if (data_String == null)
-                {
-                    endOfFile = true;
-                    break;
-                }
-
-                // Stocke les valeurs 
-                var data_values = data_String.Split(';');
-
-                if (data_values[0] == "") { endOfFile = true; break; }
-
-                for (int i = 1; i <= 2; i++)
-                {
-                    choice.buttonFR.Add(data_values[i]);
-                }
-
-                for (int i = 6; i <= 7; i++)
-                {
-                    choice.buttonEN.Add(data_values[i]);
-                }
-
-                for (int i = 10; i <= 11; i++)
-                {
-                    choice.sheetNumber.Add(data_values[i]);
-                }
-
-                data_String = strReader.ReadLine();
-
-                Debug.Log("Choice added");
-                choiceDatabase.choices.Add(choice);
-            }
-
-            endOfFile = false;
         }
     }
-
 }
