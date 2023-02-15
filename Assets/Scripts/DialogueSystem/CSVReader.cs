@@ -27,9 +27,16 @@ namespace TeamFive
             TextAsset fileAsset = null;
             for (int i = 1; i <= nbFile; i++)
             {
+                if (i == 15)
+                {
+                    DialogueData data = new();
+                    dialogueDatabase.dialogueDatas.Add(data);
+                    continue;
+                }
                 fileAsset = (TextAsset)Resources.Load("Sheet_Dialogue/Feuille_" + i, typeof(TextAsset));
-                filePath = fileAsset.text;//"Assets/Resources/Sheet_Dialogue/Feuille_" + i + ".csv";
+                filePath = fileAsset.text;
                 ReadSheet(filePath);
+                Debug.Log("Data set");
             }
         }
 
@@ -49,7 +56,6 @@ namespace TeamFive
                     case 0:
                         if(value.Length > 2)
                         {
-                            // Debug.Log(value);
                             if (value.Contains('\n'))
                             {
                                 string[] realVal = value.Split('\n');
@@ -73,17 +79,38 @@ namespace TeamFive
                     case 6:
                         if (int.TryParse(value, out int realValue))
                         {
-                            Debug.Log("Choice length : " + value.Length);
-                            Debug.Log("Choice : " + value);
+                            Debug.Log("End Sheet int");
+                            Debug.Log(realValue);
                             data.playerChoice = realValue.ToString();
                             dialogueDatabase.dialogueDatas.Add(data);
                             return;
                         }
-                        break;
+                        else
+                        {
+                            if(value == "fin n1" || value == "x")
+                            {
+                                Debug.Log("End Story");
+                                dialogueDatabase.dialogueDatas.Add(data);
+                                return;
+                            }
+                            int actualI = i;
+                            while(i % 21 != 0)
+                            {
+                                i++;
+                            }
+                            if (data_values[i].Length < 3)
+                            {
+                                Debug.Log(data_values[i]);
+                                Debug.Log("End Sheet next");
+                                dialogueDatabase.dialogueDatas.Add(data);
+                                return;
+                            }
+                            i = actualI;
+                            break;
+                        }
                     default: break;
                 }
             }
-
         }
         #endregion
     }
